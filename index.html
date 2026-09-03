@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shomi Aktar | Applied Mathematics</title>
+
+<meta name="description"
+content="Academic website of Shomi Aktar, Ph.D. Candidate in Mathematics at The University of Alabama. Research in applied mathematics, anomalous transport, stochastic modeling, porous media, and scientific computing.">
+
+<style>
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+:root {
+    --crimson: #9E1B32;
+    --dark: #172033;
+    --navy: #202b40;
+    --text: #333a46;
+    --muted: #697386;
+    --light: #f7f8fa;
+    --border: #e3e6eb;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 750;
+    color: var(--dark);
+    letter-spacing: .3px;
+}
+
+.logo span {
+    color: var(--crimson);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: .94rem;
+    font-weight: 600;
+    color: #3e4654;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--crimson);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(158,27,50,.08), transparent 30%),
+      linear-gradient(135deg, #ffffff 0%, #fafafa 60%, #f6f7f9 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .65fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--crimson);
+    font-size: .85rem;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 5.3rem);
+    line-height: 1.02;
+    margin: 0;
+    color: var(--dark);
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    margin: 18px 0 5px;
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #4b5565;
+}
+
+.affiliation {
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.research-line {
+    margin-top: 28px;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 700px;
+    font-size: 1.08rem;
+    color: #596273;
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 32px;
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 5px;
+    font-weight: 650;
+    font-size: .93rem;
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--crimson);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #7f1428;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid #ccd1d9;
+    background: white;
+    color: var(--dark);
+}
+
+.btn-secondary:hover {
+    border-color: var(--crimson);
+    color: var(--crimson);
+}
+
+
+/* PHOTO PLACEHOLDER */
+
+.photo-box {
+    width: 310px;
+    height: 390px;
+    margin-left: auto;
+    border-radius: 8px;
+    background:
+       linear-gradient(145deg,#e9ebef,#f8f8f8);
+    border: 1px solid #e1e3e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a919e;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(0,0,0,.08);
+    position: relative;
+}
+
+.photo-box::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    background: var(--crimson);
+    bottom: -13px;
+    right: 20px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    padding: 95px 0;
+}
+
+.section-light {
+    background: var(--light);
+}
+
+.section-label {
+    color: var(--crimson);
+    font-size: .78rem;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    color: var(--dark);
+    margin: 5px 0 12px;
+    letter-spacing: -.5px;
+}
+
+.section-intro {
+    max-width: 730px;
+    color: var(--muted);
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .65fr;
+    gap: 80px;
+}
+
+.about-text {
+    font-size: 1.04rem;
+}
+
+.interests {
+    border-left: 3px solid var(--crimson);
+    padding-left: 25px;
+}
+
+.interests h3 {
+    margin-top: 0;
+    color: var(--dark);
+}
+
+.interests ul {
+    padding-left: 18px;
+    color: #555f70;
+}
+
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.research-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .25s;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 38px rgba(0,0,0,.08);
+}
+
+.research-visual {
+    height: 190px;
+    background:
+       linear-gradient(135deg,#eceff3,#f8f8f8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b929d;
+    font-size: .9rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    color: var(--dark);
+    margin: 0 0 10px;
+    line-height: 1.35;
+}
+
+.card-content p {
+    color: #667080;
+    font-size: .94rem;
+}
+
+.card-link {
+    color: var(--crimson);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+
+/* =========================================================
+   RESEARCH PIPELINE
+========================================================= */
+
+.pipeline {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 12px;
+    margin-top: 45px;
+}
+
+.pipeline-item {
+    padding: 24px 15px;
+    text-align: center;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 7px;
+    position: relative;
+}
+
+.pipeline-number {
+    color: var(--crimson);
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.pipeline-item strong {
+    display: block;
+    margin-top: 7px;
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   TEACHING / PROFESSIONAL
+========================================================= */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+}
+
+.clean-list {
+    list-style: none;
+    padding: 0;
+}
+
+.clean-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.clean-list strong {
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background: var(--dark);
+    color: white;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact .section-label {
+    color: #e28b9b;
+}
+
+.contact p {
+    color: #c9ced8;
+    max-width: 650px;
+}
+
+.contact-links {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.contact-links a {
+    color: white;
+    font-weight: 600;
+}
+
+.contact-links a:hover {
+    color: #e8a0ad;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #111827;
+    color: #9ca3af;
+    padding: 25px 0;
+    text-align: center;
+    font-size: .85rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-box {
+        margin: 20px auto;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pipeline {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     NAVIGATION
+======================================================= -->
+
+<nav>
+<div class="container nav-container">
+
+    <div class="logo">Shomi <span>Aktar</span></div>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#presentations">Presentations</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</div>
+</nav>
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<header class="hero">
+<div class="container hero-grid">
+
+    <div>
+
+        <div class="eyebrow">Applied Mathematics · Stochastic Modeling</div>
+
+        <h1>Shomi Aktar</h1>
+
+        <h2>Ph.D. Candidate in Mathematics</h2>
+
+        <div class="affiliation">
+            The University of Alabama
+        </div>
+
+        <div class="research-line">
+            Transport Phenomena · Porous Media · First-Passage Processes · Scientific Computing
+        </div>
+
+        <p class="hero-description">
+            I develop mathematical and computational models to understand
+            anomalous transport in heterogeneous porous media, connecting
+            microscopic particle dynamics with macroscopic transport behavior.
+        </p>
+
+        <div class="buttons">
+            <a class="btn btn-primary" href="#research">Explore My Research</a>
+            <a class="btn btn-secondary" href="#cv">Curriculum Vitae</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
+        </div>
+
+    </div>
+
+
+    <div class="photo-box">
+        Professional<br>photograph<br>will go here
+    </div>
+
+</div>
+</header>
+
+
+
+<!-- ======================================================
+     ABOUT
+======================================================= -->
+
+<section id="about">
+<div class="container">
+
+    <div class="section-label">About</div>
+    <h2 class="section-title">Mathematics across scales</h2>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I am a Ph.D. candidate in Mathematics at The University of Alabama.
+                My research lies at the intersection of applied mathematics,
+                stochastic processes, transport phenomena, and scientific computing.
+            </p>
+
+            <p>
+                My work focuses on the transport of elongated and deformable
+                particles through heterogeneous porous structures. I combine
+                pore-scale computational modeling with stochastic upscaling,
+                memory-dependent transport equations, first-passage-time analysis,
+                and semi-analytical methods.
+            </p>
+
+            <p>
+                A central goal of my research is to understand how microscopic
+                particle dynamics, pore geometry, and temporal memory collectively
+                determine macroscopic breakthrough and transport behavior.
+            </p>
+
+        </div>
+
+
+        <div class="interests">
+
+            <h3>Research Interests</h3>
+
+            <ul>
+                <li>Applied Mathematics</li>
+                <li>Anomalous Transport</li>
+                <li>Porous Media</li>
+                <li>Stochastic Processes</li>
+                <li>First-Passage-Time Analysis</li>
+                <li>Fluid–Particle Interactions</li>
+                <li>Scientific Computing</li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+
+<!-- ======================================================
+     RESEARCH
+======================================================= -->
+
+<section id="research" class="section-light">
+<div class="container">
+
+    <div class="section-label">Research</div>
+
+    <h2 class="section-title">Selected research themes</h2>
+
+    <p class="section-intro">
+        My research connects pore-scale particle dynamics with continuum-scale
+        mathematical descriptions of transport in complex media.
+    </p>
+
+
+    <div class="research-grid">
+
+
+        <article class="research-card">
+
+            <div class="research-visual">
+                Research figure
+            </div>
+
+            <div class="card-content">
+
+                <h3>Microfiber Transport in Porous Media</h3>
+
+                <p>
+                    Mathematical and computational investigation of elongated,
+                    deformable particles moving through periodic and heterogeneous
+                    porous structures.
+                </p>
+
+                <span class="card-link">Research project →</span>
+
+            </div>
+        </article>
+
+
+        <article class="research-card">
+
+            <div class="research-visual">
+                Breakthrough figure
+            </div>
+
+            <div class="card-content">
+
+                <h3>Memory-Driven Transport</h3>
+
+                <p>
+                    Nonlocal transport models incorporating memory kernels to
+                    characterize anomalous spreading, retention, and long-time
+                    breakthrough behavior.
+                </p>
+
+                <span class="card-link">Research project →</span>
+
+            </div>
+        </article>
+
+
+        <article class="research-card">
+
+            <div class="research-visual">
+                Concentration field
+            </div>
+
+            <div class="card-content">
+
+                <h3>First-Passage & Breakthrough Dynamics</h3>
+
+                <p>
+                    Analysis of first-passage statistics and breakthrough dynamics
+                    to quantify how geometry and temporal memory control transport.
+                </p>
+
+                <span class="card-link">Research project →</span>
+
+            </div>
+        </article>
+
+    </div>
+
+
+    <div style="margin-top:85px">
+
+        <div class="section-label">Methodology</div>
+
+        <h2 class="section-title">
+            From microscopic dynamics to macroscopic transport
+        </h2>
+
+
+        <div class="pipeline">
+
+            <div class="pipeline-item">
+                <span class="pipeline-number">01</span>
+                <strong>Pore-Scale Dynamics</strong>
+            </div>
+
+            <div class="pipeline-item">
+                <span class="pipeline-number">02</span>
+                <strong>Transport Statistics</strong>
+            </div>
+
+            <div class="pipeline-item">
+                <span class="pipeline-number">03</span>
+                <strong>Stochastic Upscaling</strong>
+            </div>
+
+            <div class="pipeline-item">
+                <span class="pipeline-number">04</span>
+                <strong>Memory Models</strong>
+            </div>
+
+            <div class="pipeline-item">
+                <span class="pipeline-number">05</span>
+                <strong>Breakthrough & FPT</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+
+<!-- ======================================================
+     TEACHING
+======================================================= -->
+
+<section id="teaching">
+<div class="container">
+
+    <div class="section-label">Teaching</div>
+
+    <h2 class="section-title">Teaching & mentoring</h2>
+
+    <p class="section-intro">
+        My teaching emphasizes mathematical reasoning, clear communication,
+        and connecting analytical ideas with meaningful applications.
+    </p>
+
+
+    <div class="two-column">
+
+        <div>
+
+            <h3>Selected Courses</h3>
+
+            <ul class="clean-list">
+                <li><strong>Calculus I</strong></li>
+                <li><strong>Calculus III</strong></li>
+                <li><strong>Introduction to Linear Algebra</strong></li>
+                <li><strong>Precalculus Algebra & Trigonometry</strong></li>
+                <li><strong>Calculus & Applications</strong></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Teaching Approach</h3>
+
+            <p>
+                I aim to create a classroom in which students understand not only
+                how to carry out mathematical procedures, but why the underlying
+                ideas work.
+            </p>
+
+            <p>
+                My teaching combines structured explanations, visual reasoning,
+                guided problem solving, and opportunities for students to connect
+                abstract mathematics with applications.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+
+<!-- ======================================================
+     PRESENTATIONS
+======================================================= -->
+
+<section id="presentations" class="section-light">
+<div class="container">
+
+    <div class="section-label">Academic Engagement</div>
+
+    <h2 class="section-title">Selected presentations</h2>
+
+
+    <ul class="clean-list">
+
+        <li>
+            <strong>SIAM Annual Meeting</strong><br>
+            Research presentation on transport in heterogeneous porous media.
+        </li>
+
+        <li>
+            <strong>APS Division of Fluid Dynamics Annual Meeting</strong><br>
+            Research presentation on anomalous transport of elongated particles.
+        </li>
+
+        <li>
+            <strong>AMS Southeastern Sectional Meeting</strong><br>
+            Contributed research presentation.
+        </li>
+
+        <li>
+            <strong>Association for Women in Mathematics</strong><br>
+            Research talks and poster presentations.
+        </li>
+
+    </ul>
+
+</div>
+</section>
+
+
+
+<!-- ======================================================
+     CV
+======================================================= -->
+
+<section id="cv">
+<div class="container">
+
+    <div class="section-label">Curriculum Vitae</div>
+
+    <h2 class="section-title">Academic profile</h2>
+
+    <p class="section-intro">
+        My curriculum vitae includes education, research experience,
+        teaching, presentations, awards, professional activities,
+        and technical expertise.
+    </p>
+
+    <a class="btn btn-primary" href="#">
+        Download CV
+    </a>
+
+</div>
+</section>
+
+
+
+<!-- ======================================================
+     CONTACT
+======================================================= -->
+
+<section id="contact" class="contact">
+<div class="container">
+
+    <div class="section-label">Contact</div>
+
+    <h2 class="section-title">Let's connect</h2>
+
+    <p>
+        I welcome conversations about applied mathematics, stochastic transport,
+        porous media, scientific computing, research collaborations, and
+        academic opportunities.
+    </p>
+
+
+    <div class="contact-links">
+
+        <a href="mailto:saktar@crimson.ua.edu">
+            Email
+        </a>
+
+        <a href="https://github.com/Shomi-Aktar">
+            GitHub
+        </a>
+
+        <a href="#">
+            Google Scholar
+        </a>
+
+        <a href="#">
+            ORCID
+        </a>
+
+        <a href="https://www.linkedin.com/in/shomi-aktar">
+            LinkedIn
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+
+
+<footer>
+<div class="container">
+    © 2026 Shomi Aktar · Department of Mathematics · The University of Alabama
+</div>
+</footer>
+
+
+</body>
+</html>
