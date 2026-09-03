@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Talks & Presentations | Shomi Aktar</title>
+
+<meta name="description"
+content="Conference talks, invited presentations, and poster presentations by Shomi Aktar.">
+
+<style>
+
+:root {
+    --crimson:#9E1B32;
+    --dark-crimson:#7A1126;
+    --light-crimson:#F8EEF0;
+    --black:#181818;
+    --text:#404040;
+    --gray:#6B7280;
+    --light-gray:#F7F7F7;
+    --border:#E4E4E4;
+    --white:#FFFFFF;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+                Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    line-height:1.7;
+    background:white;
+}
+
+a {
+    text-decoration:none;
+    color:var(--crimson);
+}
+
+
+/* NAVIGATION */
+
+header {
+    background:white;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav-container {
+    max-width:1180px;
+    margin:auto;
+    padding:0 25px;
+    min-height:76px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.site-name {
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:25px;
+    font-weight:700;
+    color:var(--crimson);
+}
+
+nav ul {
+    display:flex;
+    gap:27px;
+    list-style:none;
+}
+
+nav a {
+    display:block;
+    padding:27px 0 23px;
+    border-bottom:3px solid transparent;
+    color:#333;
+    font-size:15px;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active {
+    color:var(--crimson);
+    border-bottom-color:var(--crimson);
+}
+
+
+/* PAGE HEADER */
+
+.page-header {
+    background:
+    linear-gradient(110deg,#fff 0%,#fff 55%,#faf1f3 100%);
+    border-bottom:1px solid var(--border);
+}
+
+.page-header-inner {
+    max-width:1100px;
+    margin:auto;
+    padding:72px 25px 65px;
+}
+
+.page-label {
+    color:var(--crimson);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.page-header h1 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--black);
+    font-size:48px;
+    margin:7px 0 15px;
+}
+
+.page-header p {
+    max-width:780px;
+    font-size:18px;
+    color:#555;
+}
+
+
+/* GENERAL */
+
+.container {
+    max-width:1100px;
+    margin:auto;
+    padding:70px 25px;
+}
+
+.section-title {
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:32px;
+    color:var(--black);
+    margin-bottom:10px;
+}
+
+.title-line {
+    width:65px;
+    height:4px;
+    background:var(--crimson);
+    margin-bottom:35px;
+}
+
+
+/* UPCOMING */
+
+.upcoming {
+    background:var(--light-crimson);
+    border-left:6px solid var(--crimson);
+    padding:35px 40px;
+}
+
+.upcoming-label {
+    color:var(--crimson);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.upcoming h2 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:#222;
+    font-size:25px;
+    margin:8px 0;
+}
+
+.upcoming p {
+    color:#555;
+}
+
+
+/* TALK */
+
+.talk {
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:55px;
+    align-items:center;
+
+    padding:55px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.talk:nth-child(even) .talk-image {
+    order:2;
+}
+
+.talk:nth-child(even) .talk-content {
+    order:1;
+}
+
+
+/* IMAGES */
+
+.talk-image img {
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    border-radius:5px;
+    display:block;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    border-bottom:5px solid var(--crimson);
+}
+
+
+/* CONTENT */
+
+.year {
+    color:var(--crimson);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.type {
+    display:inline-block;
+
+    background:var(--light-crimson);
+    color:var(--dark-crimson);
+    border:1px solid #ecd1d6;
+
+    padding:4px 9px;
+    margin:0 0 12px 8px;
+
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    border-radius:3px;
+}
+
+.talk h2 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:#202020;
+    font-size:25px;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.conference {
+    color:var(--crimson);
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.description {
+    color:#555;
+    font-size:15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background:#202020;
+    border-top:5px solid var(--crimson);
+    color:#ccc;
+}
+
+.footer-container {
+    max-width:1100px;
+    margin:auto;
+    padding:32px 25px;
+
+    display:flex;
+    justify-content:space-between;
+}
+
+.footer-name {
+    font-family:Georgia,"Times New Roman",serif;
+    color:white;
+    font-size:18px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .nav-container {
+        flex-direction:column;
+        padding-top:15px;
+    }
+
+    nav ul {
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a {
+        padding:12px 0;
+    }
+
+    .talk {
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .talk:nth-child(even) .talk-image,
+    .talk:nth-child(even) .talk-content {
+        order:initial;
+    }
+}
+
+@media(max-width:600px) {
+
+    .page-header h1 {
+        font-size:38px;
+    }
+
+    .talk-image img {
+        height:270px;
+    }
+
+    .footer-container {
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="nav-container">
+
+<a class="site-name" href="/">Shomi Aktar</a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/research/">Research</a></li>
+<li><a href="/publications/">Publications</a></li>
+<li><a href="/teaching/">Teaching</a></li>
+<li><a class="active" href="/talks/">Talks</a></li>
+<li><a href="/awards/">Awards</a></li>
+<li><a href="/projects/">Projects</a></li>
+<li><a href="/cv/">CV</a></li>
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+<div class="page-header-inner">
+
+<div class="page-label">
+Academic Engagement
+</div>
+
+<h1>Talks & Presentations</h1>
+
+<p>
+Selected conference talks, invited presentations,
+poster presentations, and research communication activities
+in applied mathematics and transport modeling.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- UPCOMING -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Upcoming</h2>
+<div class="title-line"></div>
+
+<div class="upcoming">
+
+<div class="upcoming-label">
+Upcoming Presentation · 2026
+</div>
+
+<h2>
+11th SIAM Central States Section Annual Meeting
+</h2>
+
+<p>
+Upcoming research presentation in applied mathematics.
+Presentation title and additional program information
+will be added when finalized.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SELECTED PRESENTATIONS -->
+
+<section style="background:#fcfcfc;border-top:1px solid #e4e4e4;">
+
+<div class="container">
+
+<h2 class="section-title">Selected Presentations</h2>
+<div class="title-line"></div>
+
+
+<!-- =====================================================
+     SIAM AN26 TALK
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/siam-an26-talk.jpg"
+     alt="Shomi Aktar presenting at SIAM Annual Meeting 2026">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2026</span>
+<span class="type">Contributed Talk</span>
+
+<h2>
+Memory-Driven First Passage Time Analysis of
+Deformable Fiber Transport in Perforated Media
+</h2>
+
+<div class="conference">
+SIAM Annual Meeting (AN26) · CP17: Stochastic Systems
+</div>
+
+<p class="description">
+Presented research on first-passage dynamics and
+memory-dependent transport of deformable fibers in
+geometrically heterogeneous perforated media.
+Joint work with Mojdeh Rasoulzadeh.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     AWM / SIAM POSTER
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/awm-siam-poster.jpg"
+     alt="Shomi Aktar presenting poster at SIAM AN26 and AWM">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2026</span>
+<span class="type">Poster</span>
+
+<h2>
+Semi-Analytical Modeling of Shifted Generalized-Gamma
+Waiting-Time Distributions in Random Porous Media
+</h2>
+
+<div class="conference">
+SIAM Annual Meeting (AN26) · Association for Women in Mathematics
+</div>
+
+<p class="description">
+Poster presentation on semi-analytical descriptions of
+waiting-time distributions and anomalous transport in
+random porous environments.
+Joint work with Mojdeh Rasoulzadeh.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     AMS
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/ams-southeastern-2026.jpg"
+     alt="Shomi Aktar at AMS Southeastern Sectional Meeting">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2026</span>
+<span class="type">Contributed Talk</span>
+
+<h2>
+Anomalous Transport of Deformable Fibers
+in Microstructured Media
+</h2>
+
+<div class="conference">
+AMS Spring Southeastern Sectional Meeting
+</div>
+
+<p class="description">
+Presented a semi-analytical CTRW-based framework
+for describing anomalous transport of deformable
+fibers in microstructured environments.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     APS DFD
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/aps-dfd-2025.jpg"
+     alt="Shomi Aktar presenting at APS Division of Fluid Dynamics">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2025</span>
+<span class="type">Contributed Talk</span>
+
+<h2>
+Anomalous Transport of Microplastic Fibers
+in Porous Media
+</h2>
+
+<div class="conference">
+APS Division of Fluid Dynamics Annual Meeting
+</div>
+
+<p class="description">
+Presented research examining transport and anomalous
+breakthrough behavior of elongated microplastic fibers
+through heterogeneous porous media.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     AWM TALK
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/awm-talk-2025.jpg"
+     alt="Shomi Aktar giving an Association for Women in Mathematics talk">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2025</span>
+<span class="type">Invited Talk</span>
+
+<h2>
+Anomalous Transport of Deformable Particles
+(Filaments) Around Circular Obstacles
+</h2>
+
+<div class="conference">
+Association for Women in Mathematics (AWM)
+</div>
+
+<p class="description">
+Invited presentation on mathematical modeling of
+deformable filament transport and the influence of
+circular obstacles on particle migration.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ALABAMA FLORIDA
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/alabama-florida-2025.jpg"
+     alt="Shomi Aktar presenting at Alabama Florida Conference">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2025</span>
+<span class="type">Poster</span>
+
+<h2>
+Diffusion of Elongated and Deformable Particles
+in Perforated Media
+</h2>
+
+<div class="conference">
+Third Joint Alabama–Florida Conference on Differential
+Equations, Dynamical Systems and Applications
+</div>
+
+<p class="description">
+Presented research on diffusion and transport of
+elongated particles in geometrically heterogeneous
+perforated domains.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CIROH
+     ===================================================== -->
+
+<div class="talk">
+
+<div class="talk-image">
+<img src="/assets/talks/ciroh-3mt-2025.jpg"
+     alt="Shomi Aktar presenting at CIROH at The University of Alabama">
+</div>
+
+<div class="talk-content">
+
+<span class="year">2025</span>
+<span class="type">3-Minute Research Presentation</span>
+
+<h2>
+Research Communication in Hydrologic and
+Environmental Transport
+</h2>
+
+<div class="conference">
+CIROH @ UA · 3-Minute Thesis Competition
+</div>
+
+<p class="description">
+Presented research related to hydrologic and
+environmental transport processes in a concise
+three-minute research communication format.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<div class="footer-name">
+Shomi Aktar
+</div>
+
+<div>
+Department of Mathematics · The University of Alabama
+</div>
+
+</div>
+
+<div>
+© 2026 Shomi Aktar
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
