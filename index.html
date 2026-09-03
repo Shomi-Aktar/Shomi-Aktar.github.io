@@ -7,24 +7,36 @@
 <title>Shomi Aktar | Applied Mathematics</title>
 
 <meta name="description"
-content="Academic website of Shomi Aktar, Ph.D. Candidate in Mathematics at The University of Alabama. Research in applied mathematics, anomalous transport, stochastic modeling, porous media, and scientific computing.">
+content="Academic website of Shomi Aktar, Ph.D. Candidate in Mathematics at The University of Alabama. Research in anomalous transport, stochastic modeling, porous media, first-passage processes, and scientific computing.">
 
 <style>
 
-/* =========================================================
-   GENERAL
-========================================================= */
+/* ============================================================
+   COLOR SYSTEM
+============================================================ */
 
 :root {
     --crimson: #9E1B32;
-    --dark: #172033;
-    --navy: #202b40;
-    --text: #333a46;
+    --crimson-dark: #741426;
+    --crimson-light: #f8eef0;
+
+    --charcoal: #1f2933;
+    --text: #384252;
     --muted: #697386;
-    --light: #f7f8fa;
-    --border: #e3e6eb;
+
+    --cream: #fcfaf9;
+    --light: #f7f7f8;
     --white: #ffffff;
+
+    --border: #e3e4e8;
+
+    --shadow: 0 14px 40px rgba(24, 31, 43, .08);
 }
+
+
+/* ============================================================
+   GLOBAL
+============================================================ */
 
 * {
     box-sizing: border-box;
@@ -36,205 +48,34 @@ html {
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
     color: var(--text);
     line-height: 1.7;
-    background: white;
+    background: var(--white);
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 .container {
-    width: min(1120px, 90%);
+    width: min(1180px, 90%);
     margin: auto;
 }
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255,255,255,0.97);
-    border-bottom: 1px solid var(--border);
-}
-
-.nav-container {
-    min-height: 72px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.3rem;
-    font-weight: 750;
-    color: var(--dark);
-    letter-spacing: .3px;
-}
-
-.logo span {
-    color: var(--crimson);
-}
-
-.nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: .94rem;
-    font-weight: 600;
-    color: #3e4654;
-    transition: .2s;
-}
-
-.nav-links a:hover {
-    color: var(--crimson);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    background:
-      radial-gradient(circle at 85% 20%, rgba(158,27,50,.08), transparent 30%),
-      linear-gradient(135deg, #ffffff 0%, #fafafa 60%, #f6f7f9 100%);
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.35fr .65fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.eyebrow {
-    color: var(--crimson);
-    font-size: .85rem;
-    font-weight: 750;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: clamp(3rem, 6vw, 5.3rem);
-    line-height: 1.02;
-    margin: 0;
-    color: var(--dark);
-    letter-spacing: -2px;
-}
-
-.hero h2 {
-    margin: 18px 0 5px;
-    font-size: 1.45rem;
-    font-weight: 500;
-    color: #4b5565;
-}
-
-.affiliation {
-    color: var(--muted);
-    font-size: 1.08rem;
-}
-
-.research-line {
-    margin-top: 28px;
-    color: var(--dark);
-    font-weight: 600;
-}
-
-.hero-description {
-    max-width: 700px;
-    font-size: 1.08rem;
-    color: #596273;
-    margin-top: 20px;
-}
-
-.buttons {
-    margin-top: 32px;
-    display: flex;
-    gap: 13px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 11px 20px;
-    border-radius: 5px;
-    font-weight: 650;
-    font-size: .93rem;
-    transition: .2s;
-}
-
-.btn-primary {
-    background: var(--crimson);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #7f1428;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    border: 1px solid #ccd1d9;
-    background: white;
-    color: var(--dark);
-}
-
-.btn-secondary:hover {
-    border-color: var(--crimson);
-    color: var(--crimson);
-}
-
-
-/* PHOTO PLACEHOLDER */
-
-.photo-box {
-    width: 310px;
-    height: 390px;
-    margin-left: auto;
-    border-radius: 8px;
-    background:
-       linear-gradient(145deg,#e9ebef,#f8f8f8);
-    border: 1px solid #e1e3e7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8a919e;
-    text-align: center;
-    box-shadow: 0 18px 50px rgba(0,0,0,.08);
-    position: relative;
-}
-
-.photo-box::after {
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 5px;
-    background: var(--crimson);
-    bottom: -13px;
-    right: 20px;
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
 
 section {
     padding: 95px 0;
@@ -244,31 +85,286 @@ section {
     background: var(--light);
 }
 
+.section-cream {
+    background: var(--cream);
+}
+
 .section-label {
     color: var(--crimson);
-    font-size: .78rem;
-    font-weight: 750;
-    letter-spacing: 2px;
     text-transform: uppercase;
+    letter-spacing: 2.3px;
+    font-weight: 800;
+    font-size: .78rem;
 }
 
 .section-title {
-    font-size: 2.25rem;
-    color: var(--dark);
-    margin: 5px 0 12px;
-    letter-spacing: -.5px;
+    margin: 6px 0 15px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--charcoal);
+    line-height: 1.2;
+    letter-spacing: -.6px;
 }
 
 .section-intro {
-    max-width: 730px;
     color: var(--muted);
+    max-width: 800px;
     margin-bottom: 45px;
+    font-size: 1.02rem;
 }
 
 
-/* =========================================================
+/* ============================================================
+   NAVIGATION
+============================================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,.97);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    min-height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-name {
+    font-size: 1.24rem;
+    font-weight: 800;
+    color: var(--charcoal);
+}
+
+.logo-name span {
+    color: var(--crimson);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    font-size: .9rem;
+    font-weight: 650;
+    color: #454d5c;
+}
+
+.nav-links a:hover {
+    color: var(--crimson);
+}
+
+.nav-cv {
+    padding: 8px 14px;
+    border: 1px solid var(--crimson);
+    border-radius: 5px;
+    color: var(--crimson) !important;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.hero {
+    min-height: 690px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 85% 25%,
+            rgba(158,27,50,.12),
+            transparent 31%),
+        linear-gradient(135deg,
+            #ffffff 0%,
+            #fcfaf9 62%,
+            #f8eef0 100%);
+
+    border-bottom: 5px solid var(--crimson);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 85px;
+    align-items: center;
+}
+
+.hero-kicker {
+    color: var(--crimson);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 850;
+}
+
+.hero h1 {
+    color: var(--charcoal);
+
+    font-size: clamp(3.3rem, 7vw, 5.7rem);
+    line-height: 1;
+
+    margin: 12px 0 18px;
+
+    letter-spacing: -2.5px;
+}
+
+.hero-role {
+    color: #46505f;
+    font-size: 1.48rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.hero-affiliation {
+    font-size: 1.12rem;
+    color: var(--muted);
+}
+
+.hero-topics {
+    margin-top: 28px;
+
+    color: var(--charcoal);
+    font-weight: 700;
+
+    line-height: 1.7;
+}
+
+.hero-description {
+    max-width: 720px;
+
+    margin-top: 21px;
+
+    color: #626c7b;
+    font-size: 1.07rem;
+}
+
+.hero-buttons {
+    margin-top: 32px;
+
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: .91rem;
+
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--crimson);
+    color: white;
+    border: 1px solid var(--crimson);
+}
+
+.btn-primary:hover {
+    background: var(--crimson-dark);
+    border-color: var(--crimson-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    color: var(--charcoal);
+    background: white;
+    border: 1px solid #cfd3da;
+}
+
+.btn-outline:hover {
+    color: var(--crimson);
+    border-color: var(--crimson);
+}
+
+
+/* PROFILE PHOTO */
+
+.profile-wrap {
+    position: relative;
+    width: 330px;
+    margin-left: auto;
+}
+
+.profile-photo {
+    width: 330px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    background: #e7e8eb;
+
+    border: 1px solid #dedfe3;
+
+    box-shadow: var(--shadow);
+}
+
+.profile-accent {
+    position: absolute;
+    width: 110px;
+    height: 10px;
+
+    background: var(--crimson);
+
+    right: -22px;
+    bottom: 26px;
+}
+
+
+/* ============================================================
+   QUICK RESEARCH STRIP
+============================================================ */
+
+.research-strip {
+    background: var(--charcoal);
+    color: white;
+    padding: 34px 0;
+}
+
+.strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.strip-item {
+    text-align: center;
+    padding: 7px 25px;
+    border-right: 1px solid rgba(255,255,255,.16);
+}
+
+.strip-item:last-child {
+    border-right: none;
+}
+
+.strip-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.strip-item span {
+    color: #cfd5df;
+    font-size: .83rem;
+}
+
+
+/* ============================================================
    ABOUT
-========================================================= */
+============================================================ */
 
 .about-grid {
     display: grid;
@@ -277,146 +373,401 @@ section {
 }
 
 .about-text {
-    font-size: 1.04rem;
+    font-size: 1.03rem;
 }
 
-.interests {
-    border-left: 3px solid var(--crimson);
-    padding-left: 25px;
+.interest-box {
+    border-left: 4px solid var(--crimson);
+
+    background: var(--crimson-light);
+
+    padding: 28px 30px;
 }
 
-.interests h3 {
+.interest-box h3 {
     margin-top: 0;
-    color: var(--dark);
+    color: var(--charcoal);
 }
 
-.interests ul {
-    padding-left: 18px;
-    color: #555f70;
+.interest-box ul {
+    padding-left: 19px;
+    margin-bottom: 0;
 }
 
 
-/* =========================================================
+/* ============================================================
    RESEARCH
-========================================================= */
+============================================================ */
 
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .research-card {
     background: white;
     border: 1px solid var(--border);
     border-radius: 8px;
+
     overflow: hidden;
+
     transition: .25s;
 }
 
 .research-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 38px rgba(0,0,0,.08);
+    box-shadow: var(--shadow);
 }
 
-.research-visual {
-    height: 190px;
-    background:
-       linear-gradient(135deg,#eceff3,#f8f8f8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8b929d;
-    font-size: .9rem;
-    border-bottom: 1px solid var(--border);
+.research-image {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    background: #ededf0;
 }
 
-.card-content {
-    padding: 25px;
+.research-content {
+    padding: 27px;
 }
 
-.card-content h3 {
-    color: var(--dark);
+.research-content h3 {
     margin: 0 0 10px;
-    line-height: 1.35;
+
+    color: var(--charcoal);
+    font-size: 1.18rem;
 }
 
-.card-content p {
-    color: #667080;
-    font-size: .94rem;
+.research-content p {
+    color: var(--muted);
+    font-size: .92rem;
 }
 
-.card-link {
+.research-tag {
     color: var(--crimson);
-    font-weight: 700;
-    font-size: .9rem;
+    font-weight: 800;
+    font-size: .86rem;
 }
 
 
-/* =========================================================
-   RESEARCH PIPELINE
-========================================================= */
+/* ============================================================
+   PIPELINE
+============================================================ */
 
 .pipeline {
+    margin-top: 70px;
+
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
-    margin-top: 45px;
 }
 
 .pipeline-item {
-    padding: 24px 15px;
-    text-align: center;
-    border: 1px solid var(--border);
     background: white;
-    border-radius: 7px;
-    position: relative;
+
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--crimson);
+
+    padding: 23px 14px;
+
+    text-align: center;
 }
 
-.pipeline-number {
+.pipeline-item small {
     color: var(--crimson);
-    font-size: .75rem;
     font-weight: 800;
 }
 
 .pipeline-item strong {
+    color: var(--charcoal);
     display: block;
-    margin-top: 7px;
-    color: var(--dark);
+    margin-top: 5px;
 }
 
 
-/* =========================================================
-   TEACHING / PROFESSIONAL
-========================================================= */
+/* ============================================================
+   PUBLICATIONS
+============================================================ */
 
-.two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 65px;
+.publication-block {
+    margin-bottom: 45px;
 }
 
-.clean-list {
-    list-style: none;
-    padding: 0;
+.publication-block h3 {
+    color: var(--charcoal);
+    margin-bottom: 20px;
 }
 
-.clean-list li {
-    padding: 15px 0;
+.publication {
+    padding: 19px 0;
     border-bottom: 1px solid var(--border);
 }
 
-.clean-list strong {
-    color: var(--dark);
+.publication-title {
+    font-weight: 700;
+    color: var(--charcoal);
+}
+
+.publication-meta {
+    color: var(--muted);
+    font-size: .91rem;
+    margin-top: 5px;
+}
+
+.status {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    padding: 2px 8px;
+
+    background: var(--crimson-light);
+    color: var(--crimson);
+
+    border-radius: 20px;
+
+    font-size: .72rem;
+    font-weight: 800;
 }
 
 
-/* =========================================================
+/* ============================================================
+   TEACHING
+============================================================ */
+
+.teaching-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 50px;
+}
+
+.teaching-summary-box {
+    background: var(--crimson-light);
+    padding: 28px;
+
+    border-left: 4px solid var(--crimson);
+}
+
+.teaching-summary-box h3 {
+    margin-top: 0;
+    color: var(--charcoal);
+}
+
+
+/* UNIVERSITY CARD */
+
+.university-card {
+    margin: 34px 0;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 24px rgba(30,40,55,.05);
+}
+
+.university-header {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 24px 28px;
+
+    border-top: 5px solid var(--crimson);
+
+    background: var(--cream);
+}
+
+.university-logo {
+    width: 90px;
+    height: 70px;
+
+    object-fit: contain;
+
+    background: white;
+
+    padding: 7px;
+
+    border: 1px solid var(--border);
+}
+
+.university-title h3 {
+    margin: 0;
+
+    color: var(--charcoal);
+
+    font-size: 1.25rem;
+}
+
+.university-title p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: .91rem;
+}
+
+.course-body {
+    padding: 30px;
+}
+
+.year-group {
+    margin-bottom: 27px;
+}
+
+.year-label {
+    color: var(--crimson);
+
+    font-weight: 850;
+
+    font-size: 1rem;
+
+    margin-bottom: 8px;
+}
+
+.course-list {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.course-list li {
+    margin: 5px 0;
+}
+
+.course-code {
+    font-weight: 750;
+    color: var(--charcoal);
+}
+
+
+/* ============================================================
+   CAREER
+============================================================ */
+
+.timeline {
+    margin-top: 40px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline-year {
+    color: var(--crimson);
+    font-weight: 850;
+}
+
+.timeline-item h3 {
+    margin: 0 0 5px;
+    color: var(--charcoal);
+}
+
+.timeline-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   PRESENTATIONS
+============================================================ */
+
+.presentation {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.presentation-year {
+    color: var(--crimson);
+    font-weight: 850;
+}
+
+.presentation strong {
+    color: var(--charcoal);
+}
+
+
+/* ============================================================
+   HIGHLIGHTS
+============================================================ */
+
+.highlights {
+    background: var(--crimson);
+    color: white;
+}
+
+.highlights .section-title,
+.highlights .section-label {
+    color: white;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.highlight-item {
+    padding: 28px 18px;
+
+    border: 1px solid rgba(255,255,255,.28);
+
+    text-align: center;
+
+    background: rgba(255,255,255,.05);
+}
+
+.highlight-item strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.highlight-item span {
+    font-size: .82rem;
+    color: #f2dce1;
+}
+
+
+/* ============================================================
+   CV
+============================================================ */
+
+.cv-section {
+    text-align: center;
+}
+
+.cv-section .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ============================================================
    CONTACT
-========================================================= */
+============================================================ */
 
 .contact {
-    background: var(--dark);
+    background: var(--charcoal);
     color: white;
 }
 
@@ -425,49 +776,55 @@ section {
 }
 
 .contact .section-label {
-    color: #e28b9b;
+    color: #e7a0ad;
 }
 
 .contact p {
-    color: #c9ced8;
-    max-width: 650px;
+    color: #cbd1dc;
 }
 
 .contact-links {
-    margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
+
     gap: 25px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
 }
 
 .contact-links a {
+    font-weight: 700;
     color: white;
-    font-weight: 600;
 }
 
 .contact-links a:hover {
-    color: #e8a0ad;
+    color: #efabb7;
 }
 
 
-/* =========================================================
+/* ============================================================
    FOOTER
-========================================================= */
+============================================================ */
 
 footer {
-    background: #111827;
-    color: #9ca3af;
     padding: 25px 0;
+
+    background: #111720;
+
+    color: #aeb5c1;
+
     text-align: center;
-    font-size: .85rem;
+
+    font-size: .84rem;
 }
 
 
-/* =========================================================
+/* ============================================================
    RESPONSIVE
-========================================================= */
+============================================================ */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .nav-links {
         display: none;
@@ -479,12 +836,12 @@ footer {
 
     .hero-grid,
     .about-grid,
-    .two-column {
+    .teaching-summary {
         grid-template-columns: 1fr;
     }
 
-    .photo-box {
-        margin: 20px auto;
+    .profile-wrap {
+        margin: auto;
     }
 
     .research-grid {
@@ -495,8 +852,45 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .strip-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .strip-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .highlight-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
     .hero h1 {
-        font-size: 3.3rem;
+        font-size: 3.2rem;
+    }
+
+    .profile-wrap,
+    .profile-photo {
+        width: 100%;
+    }
+
+    .strip-grid,
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .university-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
@@ -507,149 +901,286 @@ footer {
 <body>
 
 
-<!-- ======================================================
+<!-- =========================================================
      NAVIGATION
-======================================================= -->
+========================================================== -->
 
-<nav>
-<div class="container nav-container">
+<nav class="navbar">
 
-    <div class="logo">Shomi <span>Aktar</span></div>
+<div class="container nav-inner">
+
+    <div class="logo-name">
+        Shomi <span>Aktar</span>
+    </div>
 
     <div class="nav-links">
+
         <a href="#about">About</a>
+
         <a href="#research">Research</a>
+
+        <a href="#publications">Publications</a>
+
         <a href="#teaching">Teaching</a>
-        <a href="#presentations">Presentations</a>
-        <a href="#cv">CV</a>
+
+        <a href="#presentations">Talks</a>
+
+        <a href="#highlights">Awards</a>
+
         <a href="#contact">Contact</a>
+
+        <a class="nav-cv"
+           href="assets/Shomi_Aktar_CV.pdf"
+           target="_blank">
+            CV
+        </a>
+
     </div>
 
 </div>
+
 </nav>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      HERO
-======================================================= -->
+========================================================== -->
 
 <header class="hero">
+
 <div class="container hero-grid">
 
-    <div>
 
-        <div class="eyebrow">Applied Mathematics · Stochastic Modeling</div>
+<div>
 
-        <h1>Shomi Aktar</h1>
+    <div class="hero-kicker">
+        Applied Mathematics · Stochastic Modeling
+    </div>
 
-        <h2>Ph.D. Candidate in Mathematics</h2>
+    <h1>Shomi Aktar</h1>
 
-        <div class="affiliation">
-            The University of Alabama
-        </div>
+    <div class="hero-role">
+        Ph.D. Candidate in Mathematics
+    </div>
 
-        <div class="research-line">
-            Transport Phenomena · Porous Media · First-Passage Processes · Scientific Computing
-        </div>
+    <div class="hero-affiliation">
+        Department of Mathematics · The University of Alabama
+    </div>
 
-        <p class="hero-description">
-            I develop mathematical and computational models to understand
-            anomalous transport in heterogeneous porous media, connecting
-            microscopic particle dynamics with macroscopic transport behavior.
-        </p>
 
-        <div class="buttons">
-            <a class="btn btn-primary" href="#research">Explore My Research</a>
-            <a class="btn btn-secondary" href="#cv">Curriculum Vitae</a>
-            <a class="btn btn-secondary" href="#contact">Contact</a>
-        </div>
+    <div class="hero-topics">
+
+        Anomalous Transport · Porous Media ·
+        First-Passage Processes ·
+        Scientific Computing
 
     </div>
 
 
-    <div class="photo-box">
-        Professional<br>photograph<br>will go here
+    <p class="hero-description">
+
+        I develop mathematical and computational models for
+        anomalous transport in heterogeneous porous media,
+        with particular emphasis on deformable and elongated
+        particles, stochastic upscaling, memory-dependent
+        transport, and semi-analytical methods.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a class="btn btn-primary"
+           href="#research">
+            View Research
+        </a>
+
+        <a class="btn btn-outline"
+           href="assets/Shomi_Aktar_CV.pdf"
+           target="_blank">
+            Download CV
+        </a>
+
+        <a class="btn btn-outline"
+           href="#teaching">
+            Teaching
+        </a>
+
     </div>
 
 </div>
+
+
+
+<div class="profile-wrap">
+
+    <img
+        class="profile-photo"
+        src="assets/shomi-profile.jpg"
+        alt="Shomi Aktar">
+
+    <div class="profile-accent"></div>
+
+</div>
+
+
+</div>
+
 </header>
 
 
 
-<!-- ======================================================
+<!-- =========================================================
+     RESEARCH STRIP
+========================================================== -->
+
+<div class="research-strip">
+
+<div class="container strip-grid">
+
+    <div class="strip-item">
+        <strong>Anomalous Transport</strong>
+        <span>Non-Fickian dynamics in complex media</span>
+    </div>
+
+    <div class="strip-item">
+        <strong>CTRW & Memory</strong>
+        <span>Stochastic upscaling and temporal memory</span>
+    </div>
+
+    <div class="strip-item">
+        <strong>First Passage Time</strong>
+        <span>Breakthrough and residence-time analysis</span>
+    </div>
+
+    <div class="strip-item">
+        <strong>Semi-Analytical Methods</strong>
+        <span>Multipole and Laplace-domain techniques</span>
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
      ABOUT
-======================================================= -->
+========================================================== -->
 
 <section id="about">
+
 <div class="container">
 
-    <div class="section-label">About</div>
-    <h2 class="section-title">Mathematics across scales</h2>
+    <div class="section-label">
+        About
+    </div>
+
+    <h2 class="section-title">
+        Mathematics across scales
+    </h2>
+
 
     <div class="about-grid">
+
 
         <div class="about-text">
 
             <p>
-                I am a Ph.D. candidate in Mathematics at The University of Alabama.
-                My research lies at the intersection of applied mathematics,
-                stochastic processes, transport phenomena, and scientific computing.
+                I am a Ph.D. candidate in Mathematics at
+                The University of Alabama. My research lies
+                at the intersection of applied mathematics,
+                stochastic processes, transport phenomena,
+                and scientific computing.
             </p>
 
-            <p>
-                My work focuses on the transport of elongated and deformable
-                particles through heterogeneous porous structures. I combine
-                pore-scale computational modeling with stochastic upscaling,
-                memory-dependent transport equations, first-passage-time analysis,
-                and semi-analytical methods.
-            </p>
 
             <p>
-                A central goal of my research is to understand how microscopic
-                particle dynamics, pore geometry, and temporal memory collectively
-                determine macroscopic breakthrough and transport behavior.
+                My current work focuses on anomalous transport
+                of elongated and deformable particles in porous
+                and perforated media. I use pore-scale modeling,
+                Continuous Time Random Walk frameworks,
+                non-Markovian memory kernels, first-passage-time
+                analysis, and semi-analytical multipole methods
+                to study transport across spatial and temporal
+                scales.
+            </p>
+
+
+            <p>
+                My broader interests include numerical analysis,
+                differential equations, mathematical modeling,
+                stochastic processes, and computational methods
+                for problems arising in environmental and
+                physical systems.
             </p>
 
         </div>
 
 
-        <div class="interests">
+
+        <aside class="interest-box">
 
             <h3>Research Interests</h3>
 
             <ul>
-                <li>Applied Mathematics</li>
-                <li>Anomalous Transport</li>
-                <li>Porous Media</li>
-                <li>Stochastic Processes</li>
-                <li>First-Passage-Time Analysis</li>
-                <li>Fluid–Particle Interactions</li>
-                <li>Scientific Computing</li>
+
+                <li>Anomalous transport</li>
+
+                <li>Porous and perforated media</li>
+
+                <li>Continuous Time Random Walk models</li>
+
+                <li>Non-Markovian memory kernels</li>
+
+                <li>First-passage processes</li>
+
+                <li>Multipole expansion methods</li>
+
+                <li>Deformable fiber transport</li>
+
+                <li>Scientific computing</li>
+
             </ul>
 
-        </div>
+        </aside>
+
 
     </div>
+
 </div>
+
 </section>
 
 
 
-<!-- ======================================================
+<!-- =========================================================
      RESEARCH
-======================================================= -->
+========================================================== -->
 
-<section id="research" class="section-light">
+<section id="research"
+         class="section-light">
+
 <div class="container">
 
-    <div class="section-label">Research</div>
+    <div class="section-label">
+        Research
+    </div>
 
-    <h2 class="section-title">Selected research themes</h2>
+    <h2 class="section-title">
+        Selected research themes
+    </h2>
 
     <p class="section-intro">
-        My research connects pore-scale particle dynamics with continuum-scale
-        mathematical descriptions of transport in complex media.
+
+        My research connects microscopic
+        particle–fluid–solid interactions with
+        stochastic and continuum-scale descriptions
+        of transport in geometrically complex media.
+
     </p>
+
 
 
     <div class="research-grid">
@@ -657,293 +1188,1580 @@ footer {
 
         <article class="research-card">
 
-            <div class="research-visual">
-                Research figure
-            </div>
+            <img
+                class="research-image"
+                src="assets/microfiber-transport.png"
+                alt="Microfiber transport in porous media">
 
-            <div class="card-content">
+            <div class="research-content">
 
-                <h3>Microfiber Transport in Porous Media</h3>
+                <h3>
+                    Deformable Fiber Transport
+                </h3>
 
                 <p>
-                    Mathematical and computational investigation of elongated,
-                    deformable particles moving through periodic and heterogeneous
+
+                    Pore-scale investigation of
+                    elongated and thread-like particles
+                    moving through periodic and random
                     porous structures.
+
                 </p>
 
-                <span class="card-link">Research project →</span>
+                <div class="research-tag">
+                    Pore-scale modeling
+                </div>
 
             </div>
+
         </article>
+
 
 
         <article class="research-card">
 
-            <div class="research-visual">
-                Breakthrough figure
-            </div>
+            <img
+                class="research-image"
+                src="assets/breakthrough-curves.png"
+                alt="Breakthrough curves">
 
-            <div class="card-content">
+            <div class="research-content">
 
-                <h3>Memory-Driven Transport</h3>
+                <h3>
+                    Memory-Driven Transport
+                </h3>
 
                 <p>
-                    Nonlocal transport models incorporating memory kernels to
-                    characterize anomalous spreading, retention, and long-time
-                    breakthrough behavior.
+
+                    CTRW-based continuum models incorporating
+                    exponential, truncated power-law, and
+                    generalized-gamma waiting-time behavior.
+
                 </p>
 
-                <span class="card-link">Research project →</span>
+                <div class="research-tag">
+                    Stochastic transport
+                </div>
 
             </div>
+
         </article>
+
 
 
         <article class="research-card">
 
-            <div class="research-visual">
-                Concentration field
-            </div>
+            <img
+                class="research-image"
+                src="assets/concentration-field.png"
+                alt="Concentration field">
 
-            <div class="card-content">
+            <div class="research-content">
 
-                <h3>First-Passage & Breakthrough Dynamics</h3>
+                <h3>
+                    First-Passage & Breakthrough Dynamics
+                </h3>
 
                 <p>
-                    Analysis of first-passage statistics and breakthrough dynamics
-                    to quantify how geometry and temporal memory control transport.
+
+                    Analysis of breakthrough curves,
+                    complementary breakthrough behavior,
+                    residence times, and geometry-dependent
+                    first-passage processes.
+
                 </p>
 
-                <span class="card-link">Research project →</span>
+                <div class="research-tag">
+                    First-passage analysis
+                </div>
 
             </div>
+
         </article>
 
     </div>
 
 
-    <div style="margin-top:85px">
 
-        <div class="section-label">Methodology</div>
-
-        <h2 class="section-title">
-            From microscopic dynamics to macroscopic transport
-        </h2>
+    <div class="pipeline">
 
 
-        <div class="pipeline">
+        <div class="pipeline-item">
 
-            <div class="pipeline-item">
-                <span class="pipeline-number">01</span>
-                <strong>Pore-Scale Dynamics</strong>
+            <small>01</small>
+
+            <strong>
+                Pore-Scale Dynamics
+            </strong>
+
+        </div>
+
+
+        <div class="pipeline-item">
+
+            <small>02</small>
+
+            <strong>
+                Transition Statistics
+            </strong>
+
+        </div>
+
+
+        <div class="pipeline-item">
+
+            <small>03</small>
+
+            <strong>
+                CTRW Upscaling
+            </strong>
+
+        </div>
+
+
+        <div class="pipeline-item">
+
+            <small>04</small>
+
+            <strong>
+                Memory Models
+            </strong>
+
+        </div>
+
+
+        <div class="pipeline-item">
+
+            <small>05</small>
+
+            <strong>
+                Breakthrough & FPT
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PUBLICATIONS
+========================================================== -->
+
+<section id="publications"
+         class="section-cream">
+
+<div class="container">
+
+    <div class="section-label">
+        Publications
+    </div>
+
+    <h2 class="section-title">
+        Research publications
+    </h2>
+
+
+
+    <div class="publication-block">
+
+        <h3>
+            Current Research
+        </h3>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                Multiscale Modeling of Microplastic
+                Transport in Porous Media:
+                A Critical Review of Continuum,
+                Pore-Scale, and Stochastic Frameworks
+
+                <span class="status">
+                    Under Review
+                </span>
+
             </div>
 
-            <div class="pipeline-item">
-                <span class="pipeline-number">02</span>
-                <strong>Transport Statistics</strong>
-            </div>
+            <div class="publication-meta">
 
-            <div class="pipeline-item">
-                <span class="pipeline-number">03</span>
-                <strong>Stochastic Upscaling</strong>
-            </div>
+                Mojdeh Rasoulzadeh,
+                Navid Tavakoulnia,
+                Kasra Momeni,
+                Michael Fedoroff,
+                Shomi Aktar
 
-            <div class="pipeline-item">
-                <span class="pipeline-number">04</span>
-                <strong>Memory Models</strong>
-            </div>
+                · Journal of Contaminant Hydrology
 
-            <div class="pipeline-item">
-                <span class="pipeline-number">05</span>
-                <strong>Breakthrough & FPT</strong>
             </div>
 
         </div>
 
     </div>
 
+
+
+    <div class="publication-block">
+
+        <h3>
+            Selected Prior Publications
+        </h3>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Climate Change Challenges in Bangladesh
+            </div>
+
+            <div class="publication-meta">
+
+                Lipon Chandra Das,
+                A. S. M. Mohiul Islam,
+                Shomi Aktar,
+                Farzana Sultana
+
+                · International Journal of Big Data Mining
+                for Global Warming, 2024
+
+            </div>
+
+        </div>
+
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+                The General Solution of Minisuperspace
+                Wheeler-De Witt Equation
+            </div>
+
+            <div class="publication-meta">
+
+                Anjan Kumar Chowdhury,
+                Shomi Aktar
+
+                · The Chittagong University
+                Journal of Science, 2021
+
+            </div>
+
+        </div>
+
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                A New Solution of Intermediate
+                Cosmological Inflation with the
+                Effect of Scalar Field
+
+            </div>
+
+            <div class="publication-meta">
+
+                Shomi Aktar,
+                Anjan Kumar Chowdhury
+
+                · The Chittagong University
+                Journal of Science, 2019
+
+            </div>
+
+        </div>
+
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                Soret-Dufour Effects on the MHD Flow
+                and Heat Transfer of Microrotation Fluid
+                over a Nonlinear Stretching Plate
+                in the Presence of Suction
+
+            </div>
+
+            <div class="publication-meta">
+
+                Mohammad Abdullah Al Mabub,
+                Nasrin Jahan Nasu,
+                Shomi Aktar,
+                Zillur Rahman
+
+                · 2013
+
+            </div>
+
+        </div>
+
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                Effect of Viscosity in Cosmological
+                Models with Time Dependent
+                Cosmological Constant Λ
+
+            </div>
+
+            <div class="publication-meta">
+
+                Shomi Aktar,
+                Sadia Salma
+
+                · The Journal of Comilla University,
+                2013
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 </div>
+
 </section>
 
 
 
-<!-- ======================================================
+<!-- =========================================================
      TEACHING
-======================================================= -->
+========================================================== -->
 
 <section id="teaching">
+
 <div class="container">
 
-    <div class="section-label">Teaching</div>
+    <div class="section-label">
+        Teaching
+    </div>
 
-    <h2 class="section-title">Teaching & mentoring</h2>
+    <h2 class="section-title">
+        University teaching experience
+    </h2>
 
     <p class="section-intro">
-        My teaching emphasizes mathematical reasoning, clear communication,
-        and connecting analytical ideas with meaningful applications.
+
+        My teaching experience spans calculus,
+        linear algebra, differential equations,
+        mathematical methods, analysis,
+        geometry, dynamics, and other undergraduate
+        and graduate mathematics courses.
+
     </p>
 
 
-    <div class="two-column">
 
-        <div>
+    <div class="teaching-summary">
 
-            <h3>Selected Courses</h3>
 
-            <ul class="clean-list">
-                <li><strong>Calculus I</strong></li>
-                <li><strong>Calculus III</strong></li>
-                <li><strong>Introduction to Linear Algebra</strong></li>
-                <li><strong>Precalculus Algebra & Trigonometry</strong></li>
-                <li><strong>Calculus & Applications</strong></li>
+        <div class="teaching-summary-box">
+
+            <h3>
+                Teaching Philosophy
+            </h3>
+
+            <p>
+
+                I emphasize mathematical reasoning,
+                conceptual understanding, visual
+                interpretation, and clear connections
+                between analytical techniques and
+                applications.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="teaching-summary-box">
+
+            <h3>
+                Classroom Experience
+            </h3>
+
+            <p>
+
+                My academic teaching career includes
+                instructor-of-record experience at
+                The University of Alabama and previous
+                faculty appointments in Bangladesh.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+<!-- =========================================================
+     UNIVERSITY OF ALABAMA
+========================================================== -->
+
+<div class="university-card">
+
+
+    <div class="university-header">
+
+
+        <img
+            class="university-logo"
+            src="assets/ua-logo.png"
+            alt="The University of Alabama logo">
+
+
+        <div class="university-title">
+
+            <h3>
+                The University of Alabama
+            </h3>
+
+            <p>
+                Graduate Teaching Assistant ·
+                Instructor of Record · 2022–Present
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="course-body">
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                Courses Taught
+            </div>
+
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MATH 113
+                    </span>
+                    — Precalculus Trigonometry
+                    (2 sections)
+                </li>
+
+
+                <li>
+                    <span class="course-code">
+                        MATH 115
+                    </span>
+                    — Precalculus Algebra & Trigonometry
+                </li>
+
+
+                <li>
+                    <span class="course-code">
+                        MATH 121
+                    </span>
+                    — Business Calculus
+                </li>
+
+
+                <li>
+                    <span class="course-code">
+                        MATH 125
+                    </span>
+                    — Calculus I
+                </li>
+
+
+                <li>
+                    <span class="course-code">
+                        MATH 126
+                    </span>
+                    — Calculus II
+                </li>
+
+
+                <li>
+                    <span class="course-code">
+                        MATH 227
+                    </span>
+                    — Calculus III
+                </li>
+
+
+                <li>
+                    <span class="course-code">
+                        MATH 237
+                    </span>
+                    — Introduction to Linear Algebra
+                    (2 sections)
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     UNIVERSITY OF CHITTAGONG
+========================================================== -->
+
+<div class="university-card">
+
+
+    <div class="university-header">
+
+
+        <img
+            class="university-logo"
+            src="assets/cu-logo.png"
+            alt="University of Chittagong logo">
+
+
+        <div class="university-title">
+
+            <h3>
+                University of Chittagong
+            </h3>
+
+            <p>
+                Assistant Professor ·
+                Department of Mathematics ·
+                2018–2021
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="course-body">
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                Selected Courses
+            </div>
+
+
+            <ul class="course-list">
+
+                <li>
+                    Methods of Applied Mathematics
+                </li>
+
+                <li>
+                    Linear Algebra
+                </li>
+
+                <li>
+                    Abstract Algebra
+                </li>
+
+                <li>
+                    Differential Equations
+                </li>
+
+                <li>
+                    Vector and Tensor Analysis
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     COMILLA UNIVERSITY
+========================================================== -->
+
+<div class="university-card">
+
+
+    <div class="university-header">
+
+
+        <img
+            class="university-logo"
+            src="assets/comilla-logo.png"
+            alt="Comilla University logo">
+
+
+        <div class="university-title">
+
+            <h3>
+                Comilla University
+            </h3>
+
+            <p>
+                Lecturer · Assistant Professor ·
+                Department of Mathematics ·
+                2011–2018
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="course-body">
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2017
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 113
+                    </span>
+                    — Geometry of Two Dimensions
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 412
+                    </span>
+                    — Statics
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 426
+                    </span>
+                    — Differential Geometry
+                </li>
+
             </ul>
 
         </div>
 
 
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2016
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 214
+                    </span>
+                    — Ordinary Differential Equations I
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 422
+                    </span>
+                    — Dynamics
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 450
+                    </span>
+                    — Honours Project
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MATH 5206
+                    </span>
+                    — Mathematical Cosmology
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2015
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 112
+                    </span>
+                    — Differential Calculus
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 123
+                    </span>
+                    — Geometry of Three Dimensions
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 313
+                    </span>
+                    — Partial Differential Equations
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2014
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 112
+                    </span>
+                    — Differential Calculus
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 121
+                    </span>
+                    — Vector Calculus
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 413
+                    </span>
+                    — Tensor Analysis
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 450
+                    </span>
+                    — Honours Project
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MATH 5203
+                    </span>
+                    — Dynamical Systems
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2013
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 113
+                    </span>
+                    — Geometry of Two Dimensions
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 123
+                    </span>
+                    — Geometry of Three Dimensions
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 324
+                    </span>
+                    — Mathematical Methods
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 413
+                    </span>
+                    — Tensor Analysis
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2012
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 113
+                    </span>
+                    — Geometry of Two Dimensions
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 121
+                    </span>
+                    — Vector Calculus
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 123
+                    </span>
+                    — Geometry of Three Dimensions
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 324
+                    </span>
+                    — Mathematical Methods
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                2011
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 324
+                    </span>
+                    — Mathematical Methods
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="year-group">
+
+            <div class="year-label">
+                Additional Courses
+            </div>
+
+            <ul class="course-list">
+
+                <li>
+                    <span class="course-code">
+                        MTH 414
+                    </span>
+                    — Linear Programming
+                </li>
+
+                <li>
+                    <span class="course-code">
+                        MTH 211
+                    </span>
+                    — Real Analysis I
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     UITS
+========================================================== -->
+
+<div class="university-card">
+
+
+    <div class="university-header">
+
+
+        <img
+            class="university-logo"
+            src="assets/uits-logo.png"
+            alt="University of Information Technology and Sciences logo">
+
+
+        <div class="university-title">
+
+            <h3>
+                University of Information Technology
+                and Sciences
+            </h3>
+
+            <p>
+                Lecturer · Department of Civil Engineering ·
+                2010–2011
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="course-body">
+
+        <p style="margin:0;color:#697386">
+
+            Faculty appointment included university-level
+            mathematics instruction. Specific course titles
+            are not listed in the current course record.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CAREER
+========================================================== -->
+
+<section class="section-light">
+
+<div class="container">
+
+    <div class="section-label">
+        Academic Career
+    </div>
+
+    <h2 class="section-title">
+        Academic appointments
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                2022–Present
+            </div>
+
+            <div>
+
+                <h3>
+                    Graduate Teaching Assistant
+                    & Instructor of Record
+                </h3>
+
+                <p>
+                    Department of Mathematics ·
+                    The University of Alabama
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                2018–2021
+            </div>
+
+            <div>
+
+                <h3>
+                    Assistant Professor
+                </h3>
+
+                <p>
+                    Department of Mathematics ·
+                    University of Chittagong
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                2015–2018
+            </div>
+
+            <div>
+
+                <h3>
+                    Assistant Professor
+                </h3>
+
+                <p>
+                    Department of Mathematics ·
+                    Comilla University
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                2011–2015
+            </div>
+
+            <div>
+
+                <h3>
+                    Lecturer
+                </h3>
+
+                <p>
+                    Department of Mathematics ·
+                    Comilla University
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                2010–2011
+            </div>
+
+            <div>
+
+                <h3>
+                    Lecturer
+                </h3>
+
+                <p>
+                    University of Information
+                    Technology and Sciences
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRESENTATIONS
+========================================================== -->
+
+<section id="presentations">
+
+<div class="container">
+
+    <div class="section-label">
+        Conferences
+    </div>
+
+    <h2 class="section-title">
+        Selected presentations
+    </h2>
+
+
+
+    <div class="presentation">
+
+        <span class="presentation-year">
+            2026
+        </span>
+
+        <strong>
+            · SIAM Annual Meeting (AN26)
+        </strong>
+
         <div>
 
-            <h3>Teaching Approach</h3>
-
-            <p>
-                I aim to create a classroom in which students understand not only
-                how to carry out mathematical procedures, but why the underlying
-                ideas work.
-            </p>
-
-            <p>
-                My teaching combines structured explanations, visual reasoning,
-                guided problem solving, and opportunities for students to connect
-                abstract mathematics with applications.
-            </p>
+            Contributed talk:
+            <em>
+                Memory-Driven First Passage Time Analysis
+                of Deformable Fiber Transport in
+                Perforated Media
+            </em>
 
         </div>
 
     </div>
 
+
+
+    <div class="presentation">
+
+        <span class="presentation-year">
+            2026
+        </span>
+
+        <strong>
+            · SIAM / Association for Women in Mathematics
+        </strong>
+
+        <div>
+
+            Poster:
+            <em>
+                Semi-Analytical Modeling of Shifted
+                Generalized-Gamma Waiting-Time
+                Distributions in Random Porous Media
+            </em>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="presentation">
+
+        <span class="presentation-year">
+            2026
+        </span>
+
+        <strong>
+            · AMS Southeastern Sectional Meeting
+        </strong>
+
+        <div>
+            Contributed research presentation on
+            anomalous transport of deformable fibers.
+        </div>
+
+    </div>
+
+
+
+    <div class="presentation">
+
+        <span class="presentation-year">
+            2025
+        </span>
+
+        <strong>
+            · APS Division of Fluid Dynamics
+        </strong>
+
+        <div>
+            Contributed presentation on anomalous transport
+            of microplastic fibers in porous media.
+        </div>
+
+    </div>
+
+
+
+    <div class="presentation">
+
+        <span class="presentation-year">
+            2025
+        </span>
+
+        <strong>
+            · Association for Women in Mathematics
+        </strong>
+
+        <div>
+            Invited talk on anomalous transport of
+            deformable particles around circular obstacles.
+        </div>
+
+    </div>
+
+
+
+    <div class="presentation">
+
+        <span class="presentation-year">
+            2025
+        </span>
+
+        <strong>
+            · Joint Alabama–Florida Conference
+        </strong>
+
+        <div>
+            Poster presentation on diffusion of
+            elongated and deformable particles
+            in perforated media.
+        </div>
+
+    </div>
+
+
 </div>
+
 </section>
 
 
 
-<!-- ======================================================
-     PRESENTATIONS
-======================================================= -->
+<!-- =========================================================
+     HIGHLIGHTS
+========================================================== -->
 
-<section id="presentations" class="section-light">
+<section id="highlights"
+         class="highlights">
+
 <div class="container">
 
-    <div class="section-label">Academic Engagement</div>
+    <div class="section-label">
+        Recognition
+    </div>
 
-    <h2 class="section-title">Selected presentations</h2>
+    <h2 class="section-title">
+        Selected honors & professional highlights
+    </h2>
 
 
-    <ul class="clean-list">
 
-        <li>
-            <strong>SIAM Annual Meeting</strong><br>
-            Research presentation on transport in heterogeneous porous media.
-        </li>
+    <div class="highlight-grid">
 
-        <li>
-            <strong>APS Division of Fluid Dynamics Annual Meeting</strong><br>
-            Research presentation on anomalous transport of elongated particles.
-        </li>
 
-        <li>
-            <strong>AMS Southeastern Sectional Meeting</strong><br>
-            Contributed research presentation.
-        </li>
+        <div class="highlight-item">
 
-        <li>
-            <strong>Association for Women in Mathematics</strong><br>
-            Research talks and poster presentations.
-        </li>
+            <strong>
+                SIAM Travel Award
+            </strong>
 
-    </ul>
+            <span>
+                2026 Annual Meeting
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                AWM Travel Award
+            </strong>
+
+            <span>
+                2026 Poster Session
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                Graduate Star Award
+            </strong>
+
+            <span>
+                The University of Alabama · 2025
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                SLMath Workshop
+            </strong>
+
+            <span>
+                Berkeley · 2025
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                APS DFD Travel Support
+            </strong>
+
+            <span>
+                2025
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                Research Grant · PI
+            </strong>
+
+            <span>
+                University of Chittagong · 2018–2019
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                Gold Medal
+            </strong>
+
+            <span>
+                Academic Excellence · 2010
+            </span>
+
+        </div>
+
+
+
+        <div class="highlight-item">
+
+            <strong>
+                Ministry Fellowship
+            </strong>
+
+            <span>
+                Science & Technology · 2009
+            </span>
+
+        </div>
+
+
+    </div>
+
 
 </div>
+
 </section>
 
 
 
-<!-- ======================================================
+<!-- =========================================================
      CV
-======================================================= -->
+========================================================== -->
 
-<section id="cv">
+<section class="cv-section">
+
 <div class="container">
 
-    <div class="section-label">Curriculum Vitae</div>
+    <div class="section-label">
+        Curriculum Vitae
+    </div>
 
-    <h2 class="section-title">Academic profile</h2>
+    <h2 class="section-title">
+        Research · Teaching · Service
+    </h2>
 
     <p class="section-intro">
-        My curriculum vitae includes education, research experience,
-        teaching, presentations, awards, professional activities,
-        and technical expertise.
+
+        View my complete curriculum vitae for
+        education, publications, academic appointments,
+        conference presentations, awards, mentoring,
+        professional memberships, service, and
+        technical experience.
+
     </p>
 
-    <a class="btn btn-primary" href="#">
-        Download CV
+
+    <a class="btn btn-primary"
+       href="assets/Shomi_Aktar_CV.pdf"
+       target="_blank">
+
+        Download Curriculum Vitae
+
     </a>
 
+
 </div>
+
 </section>
 
 
 
-<!-- ======================================================
+<!-- =========================================================
      CONTACT
-======================================================= -->
+========================================================== -->
 
-<section id="contact" class="contact">
+<section id="contact"
+         class="contact">
+
 <div class="container">
 
-    <div class="section-label">Contact</div>
+    <div class="section-label">
+        Contact
+    </div>
 
-    <h2 class="section-title">Let's connect</h2>
+    <h2 class="section-title">
+        Let's connect
+    </h2>
+
 
     <p>
-        I welcome conversations about applied mathematics, stochastic transport,
-        porous media, scientific computing, research collaborations, and
-        academic opportunities.
+
+        I welcome conversations about applied mathematics,
+        anomalous transport, porous media,
+        stochastic modeling, scientific computing,
+        research collaborations, postdoctoral opportunities,
+        and academic positions.
+
     </p>
 
 
     <div class="contact-links">
 
+
         <a href="mailto:saktar@crimson.ua.edu">
             Email
         </a>
 
-        <a href="https://github.com/Shomi-Aktar">
+
+        <a href="https://github.com/Shomi-Aktar"
+           target="_blank">
             GitHub
         </a>
 
+
+        <!-- Replace # with your Google Scholar URL -->
         <a href="#">
             Google Scholar
         </a>
 
+
+        <!-- Replace # with your ORCID URL -->
         <a href="#">
             ORCID
         </a>
 
-        <a href="https://www.linkedin.com/in/shomi-aktar">
+
+        <a href="https://www.linkedin.com/in/shomi-aktar"
+           target="_blank">
             LinkedIn
         </a>
 
+
     </div>
 
+
 </div>
+
 </section>
 
 
 
 <footer>
+
 <div class="container">
-    © 2026 Shomi Aktar · Department of Mathematics · The University of Alabama
+
+    © 2026 Shomi Aktar
+    · Department of Mathematics
+    · The University of Alabama
+
 </div>
+
 </footer>
 
 
