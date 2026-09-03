@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Research | Shomi Aktar</title>
+
+<meta name="description"
+content="Research of Shomi Aktar in applied mathematics, anomalous transport, porous media, stochastic modeling, first-passage processes, and scientific computing.">
+
+<style>
+
+:root {
+    --crimson: #9E1B32;
+    --dark-crimson: #7A1126;
+    --light-crimson: #F8EEF0;
+    --black: #181818;
+    --text: #404040;
+    --gray: #6B7280;
+    --light-gray: #F7F7F7;
+    --border: #E4E4E4;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: white;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: var(--crimson);
+}
+
+a:hover {
+    color: var(--dark-crimson);
+}
+
+
+/* NAVIGATION */
+
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 25px;
+    min-height: 76px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--crimson);
+}
+
+nav ul {
+    display: flex;
+    gap: 27px;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 27px 0 23px;
+    border-bottom: 3px solid transparent;
+
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--crimson);
+    border-bottom-color: var(--crimson);
+}
+
+
+/* PAGE HEADER */
+
+.page-header {
+    background:
+        linear-gradient(110deg, #ffffff 0%, #ffffff 55%, #faf1f3 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 72px 25px 65px;
+}
+
+.page-label {
+    color: var(--crimson);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--black);
+    font-size: 48px;
+    margin: 7px 0 15px;
+}
+
+.page-header p {
+    max-width: 780px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* GENERAL */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 25px;
+}
+
+.section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--black);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.title-line {
+    width: 65px;
+    height: 4px;
+    background: var(--crimson);
+    margin-bottom: 30px;
+}
+
+.intro {
+    max-width: 900px;
+    font-size: 17px;
+}
+
+.intro p {
+    margin-bottom: 18px;
+}
+
+
+/* RESEARCH THEMES */
+
+.theme {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 30px;
+
+    padding: 35px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.theme-number {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--crimson);
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.theme h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--black);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.theme p {
+    color: #505050;
+    margin-bottom: 11px;
+}
+
+.keywords {
+    margin-top: 15px;
+}
+
+.keyword {
+    display: inline-block;
+    background: var(--light-crimson);
+    color: var(--dark-crimson);
+    border: 1px solid #ecd1d6;
+
+    padding: 4px 10px;
+    margin: 3px 4px 3px 0;
+
+    font-size: 12px;
+    font-weight: 650;
+    border-radius: 3px;
+}
+
+
+/* METHODS */
+
+.methods-section {
+    background: var(--light-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.method {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--crimson);
+    padding: 24px;
+}
+
+.method h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--crimson);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.method p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* RESEARCH FLOW */
+
+.flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 35px;
+}
+
+.flow-item {
+    background: var(--light-crimson);
+    border-top: 3px solid var(--crimson);
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.flow-item span {
+    color: var(--crimson);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.flow-item strong {
+    display: block;
+    color: #333;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+/* CURRENT DIRECTION */
+
+.direction-box {
+    background: var(--light-crimson);
+    border-left: 5px solid var(--crimson);
+    padding: 30px 35px;
+    margin-top: 25px;
+}
+
+.direction-box h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #202020;
+    border-top: 5px solid var(--crimson);
+    color: #ccc;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 32px 25px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-name {
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+    font-size: 18px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .nav-container {
+        flex-direction: column;
+        padding-top: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        padding: 12px 0;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .flow {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .page-header h1 {
+        font-size: 38px;
+    }
+
+    .theme {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="nav-container">
+
+    <a class="site-name" href="/">Shomi Aktar</a>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/research/">Research</a></li>
+            <li><a href="/publications/">Publications</a></li>
+            <li><a href="/teaching/">Teaching</a></li>
+            <li><a href="/talks/">Talks</a></li>
+            <li><a href="/awards/">Awards</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/cv/">CV</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+<div class="page-header-inner">
+
+    <div class="page-label">
+        Applied Mathematics
+    </div>
+
+    <h1>Research</h1>
+
+    <p>
+        My research focuses on mathematical and computational
+        descriptions of transport in heterogeneous porous media,
+        connecting pore-scale particle dynamics with stochastic
+        and continuum-scale models.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH OVERVIEW -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">Research Overview</h2>
+    <div class="title-line"></div>
+
+    <div class="intro">
+
+        <p>
+            I study <strong>anomalous transport in complex porous
+            environments</strong>, with particular interest in
+            elongated, deformable, and thread-like particles such as
+            microplastic fibers. Their transport can differ substantially
+            from the behavior predicted by classical diffusion and
+            advection-diffusion models.
+        </p>
+
+        <p>
+            My work seeks to understand how pore geometry,
+            particle-scale dynamics, trapping and retention,
+            heterogeneous transition times, and temporal memory
+            collectively influence macroscopic transport and
+            breakthrough behavior.
+        </p>
+
+        <p>
+            To address these problems, I combine pore-scale modeling
+            with stochastic upscaling, memory-dependent transport
+            formulations, first-passage-time analysis, Laplace-transform
+            techniques, and semi-analytical methods.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH THEMES -->
+
+<section style="background:#fcfcfc;border-top:1px solid #e4e4e4;">
+
+<div class="container">
+
+    <h2 class="section-title">Current Research Themes</h2>
+    <div class="title-line"></div>
+
+
+    <!-- THEME 1 -->
+
+    <div class="theme">
+
+        <div class="theme-number">01</div>
+
+        <div>
+
+            <h2>
+                Microfiber and Microplastic Transport
+                in Porous Media
+            </h2>
+
+            <p>
+                I investigate the transport of elongated and deformable
+                particles through geometrically complex porous structures.
+                Unlike ideal spherical tracers, thread-like particles
+                interact with pore geometry through their orientation,
+                deformation, and particle–fluid–solid interactions.
+            </p>
+
+            <p>
+                A central objective is to determine how these microscopic
+                mechanisms affect retention, residence times, spreading,
+                and breakthrough at larger scales.
+            </p>
+
+            <div class="keywords">
+                <span class="keyword">Microplastics</span>
+                <span class="keyword">Microfibers</span>
+                <span class="keyword">Porous Media</span>
+                <span class="keyword">Pore-Scale Dynamics</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THEME 2 -->
+
+    <div class="theme">
+
+        <div class="theme-number">02</div>
+
+        <div>
+
+            <h2>
+                Anomalous Transport and Stochastic Upscaling
+            </h2>
+
+            <p>
+                Transport through heterogeneous pore networks may exhibit
+                broad transition-time distributions and non-Fickian
+                behavior. I use stochastic transport frameworks,
+                particularly Continuous Time Random Walk models, to
+                connect pore-scale transition statistics with
+                macroscopic transport.
+            </p>
+
+            <p>
+                These models provide a framework for representing
+                heterogeneous travel times, delayed transport,
+                retention, and long-tailed breakthrough behavior.
+            </p>
+
+            <div class="keywords">
+                <span class="keyword">CTRW</span>
+                <span class="keyword">Anomalous Transport</span>
+                <span class="keyword">Stochastic Processes</span>
+                <span class="keyword">Upscaling</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THEME 3 -->
+
+    <div class="theme">
+
+        <div class="theme-number">03</div>
+
+        <div>
+
+            <h2>
+                Memory-Dependent Transport
+            </h2>
+
+            <p>
+                My research examines transport models in which the
+                present evolution depends on the history of the
+                transport process. Memory kernels provide a mathematical
+                mechanism for incorporating non-Markovian effects
+                associated with heterogeneous waiting and transition
+                times.
+            </p>
+
+            <p>
+                I study how different memory structures influence
+                concentration evolution, breakthrough curves,
+                and long-time transport behavior.
+            </p>
+
+            <div class="keywords">
+                <span class="keyword">Memory Kernels</span>
+                <span class="keyword">Non-Markovian Dynamics</span>
+                <span class="keyword">Breakthrough Curves</span>
+                <span class="keyword">Heavy Tails</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THEME 4 -->
+
+    <div class="theme">
+
+        <div class="theme-number">04</div>
+
+        <div>
+
+            <h2>
+                First-Passage-Time and Breakthrough Analysis
+            </h2>
+
+            <p>
+                First-passage quantities provide a natural way to
+                characterize when particles reach absorbing boundaries,
+                exit a porous region, or encounter geometrical obstacles.
+                I study first-passage and complementary breakthrough
+                behavior in domains containing circular cavities
+                and multiple obstacles.
+            </p>
+
+            <p>
+                These quantities provide insight into characteristic
+                transport times, long-time tails, and the influence
+                of geometry on particle migration.
+            </p>
+
+            <div class="keywords">
+                <span class="keyword">First-Passage Time</span>
+                <span class="keyword">Survival Probability</span>
+                <span class="keyword">Breakthrough</span>
+                <span class="keyword">Diffusion</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THEME 5 -->
+
+    <div class="theme">
+
+        <div class="theme-number">05</div>
+
+        <div>
+
+            <h2>
+                Semi-Analytical Methods for Complex Geometry
+            </h2>
+
+            <p>
+                I develop semi-analytical approaches for diffusion
+                and first-passage problems involving circular
+                boundaries and multiple cavities. The formulation
+                combines Laplace transforms, Fourier representations,
+                modified Bessel functions, and multipole expansions.
+            </p>
+
+            <p>
+                These methods provide an alternative to purely
+                numerical discretization and allow geometric
+                interactions to be studied through structured
+                mathematical representations.
+            </p>
+
+            <div class="keywords">
+                <span class="keyword">Laplace Transform</span>
+                <span class="keyword">Multipole Expansion</span>
+                <span class="keyword">Bessel Functions</span>
+                <span class="keyword">Semi-Analytical Methods</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- METHODS -->
+
+<section class="methods-section">
+
+<div class="container">
+
+    <h2 class="section-title">Methods & Tools</h2>
+    <div class="title-line"></div>
+
+
+    <div class="method-grid">
+
+        <div class="method">
+            <h3>Mathematical Modeling</h3>
+            <p>
+                PDE-based descriptions of transport,
+                diffusion, memory, and first-passage processes.
+            </p>
+        </div>
+
+        <div class="method">
+            <h3>Stochastic Modeling</h3>
+            <p>
+                CTRW formulations, transition-time statistics,
+                waiting-time distributions, and memory kernels.
+            </p>
+        </div>
+
+        <div class="method">
+            <h3>Semi-Analytical Analysis</h3>
+            <p>
+                Laplace transforms, Fourier expansions,
+                multipole representations, and special functions.
+            </p>
+        </div>
+
+        <div class="method">
+            <h3>Scientific Computing</h3>
+            <p>
+                MATLAB, Python, numerical inversion,
+                simulation, visualization, and computational analysis.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- MULTISCALE WORKFLOW -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        Multiscale Research Framework
+    </h2>
+
+    <div class="title-line"></div>
+
+    <p style="max-width:850px;">
+        A recurring theme in my research is connecting microscopic
+        particle dynamics with effective macroscopic transport.
+        Conceptually, the workflow can be summarized as:
+    </p>
+
+
+    <div class="flow">
+
+        <div class="flow-item">
+            <span>01</span>
+            <strong>Pore-Scale Dynamics</strong>
+        </div>
+
+        <div class="flow-item">
+            <span>02</span>
+            <strong>Transition Statistics</strong>
+        </div>
+
+        <div class="flow-item">
+            <span>03</span>
+            <strong>Stochastic Upscaling</strong>
+        </div>
+
+        <div class="flow-item">
+            <span>04</span>
+            <strong>Memory Formulation</strong>
+        </div>
+
+        <div class="flow-item">
+            <span>05</span>
+            <strong>Breakthrough & FPT</strong>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CURRENT DIRECTION -->
+
+<section style="background:#fcfcfc;border-top:1px solid #e4e4e4;">
+
+<div class="container">
+
+    <h2 class="section-title">
+        Current Direction
+    </h2>
+
+    <div class="title-line"></div>
+
+
+    <div class="direction-box">
+
+        <h3>
+            Geometry, Memory, and Transport Across Scales
+        </h3>
+
+        <p>
+            My current work extends first-passage and
+            memory-dependent transport formulations to systems
+            containing multiple circular obstacles and increasingly
+            heterogeneous geometries. The broader objective is to
+            develop mathematically interpretable models that connect
+            local geometric interactions and temporal memory with
+            observable breakthrough behavior at larger scales.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+    <div>
+        <div class="footer-name">Shomi Aktar</div>
+        <div>
+            Department of Mathematics · The University of Alabama
+        </div>
+    </div>
+
+    <div>
+        © 2026 Shomi Aktar
+    </div>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
