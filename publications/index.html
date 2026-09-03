@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Publications | Shomi Aktar</title>
+
+<meta name="description"
+content="Publications and research manuscripts of Shomi Aktar in applied mathematics, stochastic transport, porous media, and scientific computing.">
+
+<style>
+
+:root {
+    --crimson: #9E1B32;
+    --dark-crimson: #7A1126;
+    --light-crimson: #F8EEF0;
+    --black: #181818;
+    --text: #404040;
+    --gray: #6B7280;
+    --light-gray: #F7F7F7;
+    --border: #E4E4E4;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: white;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: var(--crimson);
+}
+
+a:hover {
+    color: var(--dark-crimson);
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 25px;
+    min-height: 76px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--crimson);
+}
+
+nav ul {
+    display: flex;
+    gap: 27px;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 27px 0 23px;
+    border-bottom: 3px solid transparent;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--crimson);
+    border-bottom-color: var(--crimson);
+}
+
+
+/* =========================
+   PAGE HEADER
+   ========================= */
+
+.page-header {
+    background:
+        linear-gradient(110deg, #ffffff 0%, #ffffff 55%, #faf1f3 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 72px 25px 65px;
+}
+
+.page-label {
+    color: var(--crimson);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--black);
+    font-size: 48px;
+    margin: 7px 0 15px;
+}
+
+.page-header p {
+    max-width: 800px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* =========================
+   GENERAL
+   ========================= */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 72px 25px;
+}
+
+.section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--black);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.title-line {
+    width: 65px;
+    height: 4px;
+    background: var(--crimson);
+    margin-bottom: 30px;
+}
+
+.section-intro {
+    max-width: 850px;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   PUBLICATION ENTRIES
+   ========================= */
+
+.publication {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.pub-number {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--crimson);
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.pub-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.45;
+    color: var(--black);
+    margin-bottom: 7px;
+}
+
+.pub-authors {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.pub-journal {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.pub-status {
+    display: inline-block;
+    padding: 4px 9px;
+    margin-right: 7px;
+    margin-bottom: 5px;
+
+    background: var(--light-crimson);
+    border: 1px solid #ecd1d6;
+    color: var(--dark-crimson);
+
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    border-radius: 3px;
+}
+
+.pub-links {
+    margin-top: 13px;
+}
+
+.pub-links a {
+    display: inline-block;
+    margin-right: 16px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   RESEARCH IN PROGRESS
+   ========================= */
+
+.progress-section {
+    background: var(--light-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.progress-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--crimson);
+    padding: 25px;
+}
+
+.progress-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--crimson);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.progress-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SCHOLAR BOX
+   ========================= */
+
+.scholar-box {
+    border-left: 5px solid var(--crimson);
+    background: var(--light-crimson);
+    padding: 28px 32px;
+}
+
+.scholar-box h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--black);
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.scholar-box p {
+    margin-bottom: 14px;
+}
+
+.scholar-button {
+    display: inline-block;
+    background: var(--crimson);
+    color: white;
+    padding: 9px 17px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.scholar-button:hover {
+    background: var(--dark-crimson);
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background: #202020;
+    border-top: 5px solid var(--crimson);
+    color: #ccc;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 32px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-name {
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+    font-size: 18px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:900px) {
+
+    .nav-container {
+        flex-direction: column;
+        padding-top: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        padding: 12px 0;
+    }
+
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .page-header h1 {
+        font-size: 38px;
+    }
+
+    .publication {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="nav-container">
+
+    <a class="site-name" href="/">Shomi Aktar</a>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/research/">Research</a></li>
+            <li><a class="active" href="/publications/">Publications</a></li>
+            <li><a href="/teaching/">Teaching</a></li>
+            <li><a href="/talks/">Talks</a></li>
+            <li><a href="/awards/">Awards</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/cv/">CV</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+<div class="page-header-inner">
+
+    <div class="page-label">
+        Research Output
+    </div>
+
+    <h1>Publications</h1>
+
+    <p>
+        Research articles and manuscripts in applied mathematics,
+        transport phenomena, stochastic modeling, porous media,
+        and related areas.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- PUBLICATIONS -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        Publications & Manuscripts
+    </h2>
+
+    <div class="title-line"></div>
+
+    <p class="section-intro">
+        My research focuses on mathematical and computational
+        approaches to transport in complex systems. This page
+        lists published work and research manuscripts as they
+        become available.
+    </p>
+
+
+    <!--
+    ============================================================
+    ADD YOUR PUBLICATIONS HERE.
+
+    Example:
+
+    <div class="publication">
+
+        <div class="pub-number">01</div>
+
+        <div>
+
+            <div class="pub-title">
+                Your Article Title
+            </div>
+
+            <div class="pub-authors">
+                Shomi Aktar, Coauthor Name, Coauthor Name
+            </div>
+
+            <div class="pub-journal">
+                Journal Name, Volume, Pages, Year.
+            </div>
+
+            <span class="pub-status">Published</span>
+
+            <div class="pub-links">
+                <a href="DOI-LINK">DOI</a>
+                <a href="SCHOLAR-LINK">Google Scholar</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    ============================================================
+    -->
+
+
+    <div class="scholar-box">
+
+        <h3>Research Publications</h3>
+
+        <p>
+            Publication details, journal information, and links to
+            individual articles will be maintained here as my
+            current research projects progress through publication.
+        </p>
+
+        <!--
+        When we add your real Google Scholar URL,
+        replace # below with the URL.
+        -->
+
+        <a href="#"
+           class="scholar-button">
+            Google Scholar
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CURRENT RESEARCH -->
+
+<section class="progress-section">
+
+<div class="container">
+
+    <h2 class="section-title">
+        Current Research Directions
+    </h2>
+
+    <div class="title-line"></div>
+
+
+    <div class="progress-grid">
+
+
+        <div class="progress-card">
+
+            <h3>
+                Microfiber Transport
+            </h3>
+
+            <p>
+                Mathematical and computational investigation of
+                elongated microplastic transport through
+                heterogeneous porous environments.
+            </p>
+
+        </div>
+
+
+        <div class="progress-card">
+
+            <h3>
+                Memory & Breakthrough Dynamics
+            </h3>
+
+            <p>
+                Stochastic and memory-dependent descriptions of
+                non-Fickian transport, residence times,
+                and breakthrough behavior.
+            </p>
+
+        </div>
+
+
+        <div class="progress-card">
+
+            <h3>
+                First-Passage Problems
+            </h3>
+
+            <p>
+                Semi-analytical analysis of first-passage and
+                diffusion problems in domains containing
+                multiple geometrical obstacles.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- NOTE -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        Research Profile
+    </h2>
+
+    <div class="title-line"></div>
+
+    <p style="max-width:850px;">
+        For additional information about my mathematical models,
+        current projects, and research methodology, please visit
+        the <a href="/research/"><strong>Research</strong></a>
+        page.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+    <div>
+
+        <div class="footer-name">
+            Shomi Aktar
+        </div>
+
+        <div>
+            Department of Mathematics · The University of Alabama
+        </div>
+
+    </div>
+
+    <div>
+        © 2026 Shomi Aktar
+    </div>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
