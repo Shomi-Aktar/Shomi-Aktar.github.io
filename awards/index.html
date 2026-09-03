@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Awards & Honors | Shomi Aktar</title>
+
+<meta name="description"
+content="Awards, honors, fellowships, and conference support received by Shomi Aktar.">
+
+<style>
+
+:root {
+    --crimson:#9E1B32;
+    --dark-crimson:#7A1126;
+    --light-crimson:#F8EEF0;
+    --black:#181818;
+    --text:#404040;
+    --gray:#6B7280;
+    --light-gray:#F7F7F7;
+    --border:#E4E4E4;
+    --white:#FFFFFF;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+                Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    background:white;
+    line-height:1.7;
+}
+
+a {
+    text-decoration:none;
+    color:var(--crimson);
+}
+
+a:hover {
+    color:var(--dark-crimson);
+}
+
+
+/* NAVIGATION */
+
+header {
+    background:white;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav-container {
+    max-width:1180px;
+    margin:auto;
+    padding:0 25px;
+    min-height:76px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.site-name {
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:25px;
+    font-weight:700;
+    color:var(--crimson);
+}
+
+nav ul {
+    display:flex;
+    gap:27px;
+    list-style:none;
+}
+
+nav a {
+    display:block;
+    padding:27px 0 23px;
+    border-bottom:3px solid transparent;
+    color:#333;
+    font-size:15px;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active {
+    color:var(--crimson);
+    border-bottom-color:var(--crimson);
+}
+
+
+/* PAGE HEADER */
+
+.page-header {
+    background:
+        linear-gradient(110deg,#ffffff 0%,#ffffff 55%,#faf1f3 100%);
+    border-bottom:1px solid var(--border);
+}
+
+.page-header-inner {
+    max-width:1100px;
+    margin:auto;
+    padding:72px 25px 65px;
+}
+
+.page-label {
+    color:var(--crimson);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.page-header h1 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--black);
+    font-size:48px;
+    margin:7px 0 15px;
+}
+
+.page-header p {
+    max-width:800px;
+    font-size:18px;
+    color:#555;
+}
+
+
+/* GENERAL */
+
+.container {
+    max-width:1100px;
+    margin:auto;
+    padding:72px 25px;
+}
+
+.section-title {
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--black);
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.title-line {
+    width:65px;
+    height:4px;
+    background:var(--crimson);
+    margin-bottom:35px;
+}
+
+.section-intro {
+    max-width:800px;
+    color:#555;
+    margin-bottom:35px;
+}
+
+
+/* FEATURED AWARD */
+
+.featured {
+    background:var(--light-crimson);
+    border-left:6px solid var(--crimson);
+    padding:35px 40px;
+    margin-bottom:22px;
+}
+
+.featured-year {
+    color:var(--crimson);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.featured h2 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:#222;
+    font-size:25px;
+    margin:7px 0;
+}
+
+.featured p {
+    color:#555;
+}
+
+
+/* AWARDS GRID */
+
+.awards-section {
+    background:var(--light-gray);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+
+.awards-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.award-card {
+    background:white;
+    border:1px solid var(--border);
+    border-top:4px solid var(--crimson);
+    padding:28px;
+    transition:.2s;
+}
+
+.award-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.award-year {
+    color:var(--crimson);
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:.5px;
+    margin-bottom:7px;
+}
+
+.award-card h3 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:#222;
+    font-size:20px;
+    line-height:1.4;
+    margin-bottom:8px;
+}
+
+.award-organization {
+    color:var(--crimson);
+    font-size:14px;
+    font-weight:650;
+    margin-bottom:8px;
+}
+
+.award-card p {
+    color:#555;
+    font-size:14px;
+}
+
+
+/* EARLIER HONORS */
+
+.timeline {
+    position:relative;
+    margin-left:10px;
+}
+
+.timeline:before {
+    content:"";
+    position:absolute;
+    left:7px;
+    top:8px;
+    bottom:8px;
+    width:2px;
+    background:#e2c3c9;
+}
+
+.timeline-item {
+    position:relative;
+    padding-left:45px;
+    margin-bottom:30px;
+}
+
+.timeline-dot {
+    position:absolute;
+    left:0;
+    top:7px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--crimson);
+    border:4px solid var(--light-crimson);
+}
+
+.timeline-year {
+    color:var(--crimson);
+    font-weight:800;
+    font-size:13px;
+}
+
+.timeline-item h3 {
+    font-family:Georgia,"Times New Roman",serif;
+    color:#222;
+    font-size:19px;
+    margin:2px 0 4px;
+}
+
+.timeline-item p {
+    color:#555;
+    font-size:14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background:#202020;
+    border-top:5px solid var(--crimson);
+    color:#ccc;
+}
+
+.footer-container {
+    max-width:1100px;
+    margin:auto;
+    padding:32px 25px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.footer-name {
+    font-family:Georgia,"Times New Roman",serif;
+    color:white;
+    font-size:18px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .nav-container {
+        flex-direction:column;
+        padding-top:15px;
+    }
+
+    nav ul {
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a {
+        padding:12px 0;
+    }
+
+    .awards-grid {
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .page-header h1 {
+        font-size:38px;
+    }
+
+    .featured {
+        padding:28px;
+    }
+
+    .footer-container {
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="nav-container">
+
+<a class="site-name" href="/">Shomi Aktar</a>
+
+<nav>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/research/">Research</a></li>
+    <li><a href="/publications/">Publications</a></li>
+    <li><a href="/teaching/">Teaching</a></li>
+    <li><a href="/talks/">Talks</a></li>
+    <li><a class="active" href="/awards/">Awards</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/cv/">CV</a></li>
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+<div class="page-header-inner">
+
+<div class="page-label">
+Recognition & Support
+</div>
+
+<h1>Awards & Honors</h1>
+
+<p>
+Selected academic honors, research awards, fellowships,
+and competitive conference and professional-development
+support received throughout my academic career.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FEATURED -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Recent Recognition</h2>
+<div class="title-line"></div>
+
+
+<div class="featured">
+
+<div class="featured-year">
+2026
+</div>
+
+<h2>
+Graduate Student Training for Academic Research
+(G-STAR) Fellowship
+</h2>
+
+<p>
+Selected for The University of Alabama Graduate School's
+G-STAR Fellowship program supporting graduate student
+development in academic research.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RECENT AWARDS -->
+
+<section class="awards-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Conference & Professional Awards
+</h2>
+
+<div class="title-line"></div>
+
+<p class="section-intro">
+Competitive travel awards and professional-development
+support have enabled me to present research and participate
+in major mathematics and applied mathematics meetings.
+</p>
+
+
+<div class="awards-grid">
+
+
+<div class="award-card">
+
+<div class="award-year">2026</div>
+
+<h3>
+SIAM Travel Award
+</h3>
+
+<div class="award-organization">
+Society for Industrial and Applied Mathematics
+</div>
+
+<p>
+Travel support associated with participation and
+research presentation at the SIAM Annual Meeting.
+</p>
+
+</div>
+
+
+<div class="award-card">
+
+<div class="award-year">2026</div>
+
+<h3>
+AWM Travel Support
+</h3>
+
+<div class="award-organization">
+Association for Women in Mathematics
+</div>
+
+<p>
+Travel support for professional participation and
+research presentation in connection with SIAM AN26.
+</p>
+
+</div>
+
+
+<div class="award-card">
+
+<div class="award-year">2026</div>
+
+<h3>
+AMS Conference Support
+</h3>
+
+<div class="award-organization">
+American Mathematical Society
+</div>
+
+<p>
+Conference-related support associated with participation
+in the AMS Spring Southeastern Sectional Meeting.
+</p>
+
+</div>
+
+
+<div class="award-card">
+
+<div class="award-year">2025</div>
+
+<h3>
+APS DFD Conference Support
+</h3>
+
+<div class="award-organization">
+American Physical Society · Division of Fluid Dynamics
+</div>
+
+<p>
+Support associated with participation and research
+presentation at the APS Division of Fluid Dynamics
+Annual Meeting.
+</p>
+
+</div>
+
+
+<div class="award-card">
+
+<div class="award-year">2025</div>
+
+<h3>
+Conference Travel Award
+</h3>
+
+<div class="award-organization">
+Third Joint Alabama–Florida Conference
+</div>
+
+<p>
+Support associated with participation and poster
+presentation at the Alabama–Florida Conference on
+Differential Equations, Dynamical Systems and Applications.
+</p>
+
+</div>
+
+
+<div class="award-card">
+
+<div class="award-year">
+2025–2026
+</div>
+
+<h3>
+University Research & Travel Support
+</h3>
+
+<div class="award-organization">
+The University of Alabama
+</div>
+
+<p>
+Graduate research and travel support associated with
+professional development and conference participation.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EARLIER HONORS -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Academic Honors
+</h2>
+
+<div class="title-line"></div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-year">
+Graduate Study
+</div>
+
+<h3>
+Graduate Fellowship & Academic Support
+</h3>
+
+<p>
+Received competitive academic and graduate support
+during advanced study and research.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-year">
+University Study
+</div>
+
+<h3>
+Gold Medal
+</h3>
+
+<p>
+Academic recognition for outstanding achievement
+during university study.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-year">
+University Study
+</div>
+
+<h3>
+Academic Scholarship
+</h3>
+
+<p>
+Received scholarship recognition based on academic
+performance.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<div class="footer-name">
+Shomi Aktar
+</div>
+
+<div>
+Department of Mathematics · The University of Alabama
+</div>
+
+</div>
+
+<div>
+© 2026 Shomi Aktar
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
