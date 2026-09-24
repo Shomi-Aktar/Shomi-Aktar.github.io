@@ -10,533 +10,15 @@
   <meta name="description"
         content="Academic website of Shomi Aktar, Ph.D. Candidate in Mathematics at The University of Alabama. Research in applied mathematics, stochastic modeling, porous media transport, and scientific computing.">
 
-  <style>
-
-    /* =========================================================
-       BASIC SETTINGS
-       ========================================================= */
-
-    :root {
-      --crimson: #9E1B32;
-      --dark-crimson: #7A1126;
-      --light-crimson: #F8EEF0;
-      --black: #181818;
-      --dark-gray: #444444;
-      --gray: #6B7280;
-      --light-gray: #F6F6F6;
-      --border: #E4E4E4;
-      --white: #FFFFFF;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
-      color: var(--black);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--crimson);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--dark-crimson);
-    }
-
-
-    /* =========================================================
-       NAVIGATION
-       ========================================================= */
-
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 25px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      min-height: 76px;
-    }
-
-    .site-name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
-      font-weight: 700;
-      color: var(--crimson);
-      letter-spacing: 0.2px;
-    }
-
-    nav ul {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      list-style: none;
-    }
-
-    nav a {
-      color: #333333;
-      font-size: 15px;
-      font-weight: 600;
-      padding: 27px 0 23px;
-      border-bottom: 3px solid transparent;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--crimson);
-      border-bottom-color: var(--crimson);
-    }
-
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero {
-      background:
-        linear-gradient(
-          110deg,
-          #ffffff 0%,
-          #ffffff 55%,
-          #faf3f4 100%
-        );
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-container {
-      max-width: 1180px;
-      margin: auto;
-      padding: 85px 25px 80px;
-
-      display: grid;
-      grid-template-columns: 1.45fr 0.75fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--crimson);
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 58px;
-      line-height: 1.08;
-      margin-bottom: 13px;
-      color: #151515;
-    }
-
-    .hero h2 {
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--dark-gray);
-      margin-bottom: 6px;
-    }
-
-    .university {
-      color: var(--crimson);
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 27px;
-    }
-
-    .research-line {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      line-height: 1.55;
-      color: #333333;
-      max-width: 730px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 20px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 650;
-      transition: 0.2s;
-    }
-
-    .button-primary {
-      background: var(--crimson);
-      color: var(--white);
-      border: 1px solid var(--crimson);
-    }
-
-    .button-primary:hover {
-      background: var(--dark-crimson);
-      border-color: var(--dark-crimson);
-      color: var(--white);
-    }
-
-    .button-secondary {
-      background: var(--white);
-      color: var(--crimson);
-      border: 1px solid var(--crimson);
-    }
-
-    .button-secondary:hover {
-      background: var(--light-crimson);
-      color: var(--dark-crimson);
-    }
-
-
-    /* =========================================================
-       PROFILE PHOTO
-       ========================================================= */
-
-    .photo-area {
-      text-align: center;
-    }
-
-    .profile-photo {
-      width: 300px;
-      height: 360px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 6px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.13);
-      border-bottom: 6px solid var(--crimson);
-      background: #eeeeee;
-    }
-
-
-    /* =========================================================
-       MAIN CONTENT
-       ========================================================= */
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 72px 25px;
-    }
-
-    .section-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      margin-bottom: 12px;
-      color: #191919;
-    }
-
-    .title-line {
-      width: 65px;
-      height: 4px;
-      background: var(--crimson);
-      margin-bottom: 30px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.55fr 0.75fr;
-      gap: 75px;
-    }
-
- .about-text p {
-  font-size: 17px;
-  color: #3f3f3f;
-  margin-bottom: 18px;
-  line-height: 1.7;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: none;
-  -webkit-hyphens: none;
-  word-break: normal;
-  overflow-wrap: normal;
-}
-
-    /* =========================================================
-       CURRENT POSITION BOX
-       ========================================================= */
-
-    .info-box {
-      background: var(--light-gray);
-      border-top: 4px solid var(--crimson);
-      padding: 27px;
-      align-self: start;
-    }
-
-    .info-box h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      margin-bottom: 18px;
-    }
-
-    .info-item {
-      margin-bottom: 16px;
-    }
-
-    .info-label {
-      display: block;
-      font-size: 12px;
-      color: var(--gray);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .info-value {
-      font-size: 15px;
-      color: #333333;
-    }
-
-
-    /* =========================================================
-       RESEARCH AREAS
-       ========================================================= */
-
-    .research-section {
-      background: var(--light-gray);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 15px;
-    }
-
-    .research-card {
-      background: var(--white);
-      padding: 28px 25px;
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--crimson);
-      min-height: 170px;
-      transition: 0.2s;
-    }
-
-    .research-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    }
-
-    .research-card h3 {
-      color: var(--crimson);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .research-card p {
-      color: #555555;
-      font-size: 15px;
-    }
-
-
-    /* =========================================================
-       QUICK LINKS
-       ========================================================= */
-
-    .quick-links {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 30px;
-    }
-
-    .quick-link {
-      display: block;
-      border: 1px solid var(--border);
-      padding: 23px;
-      color: #222222;
-      transition: 0.2s;
-    }
-
-    .quick-link:hover {
-      border-color: var(--crimson);
-      background: var(--light-crimson);
-    }
-
-    .quick-link strong {
-      display: block;
-      color: var(--crimson);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .quick-link span {
-      font-size: 13px;
-      color: var(--gray);
-    }
-
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      background: #202020;
-      color: #dddddd;
-      border-top: 5px solid var(--crimson);
-    }
-
-    .footer-container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 35px 25px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .footer-name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      color: var(--white);
-    }
-
-    .footer-text {
-      font-size: 13px;
-      color: #bbbbbb;
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 900px) {
-
-      .nav-container {
-        flex-direction: column;
-        padding-top: 17px;
-      }
-
-      nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        padding: 12px 0;
-      }
-
-      .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 45px;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .research-line {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .quick-links {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .profile-photo {
-        width: 250px;
-        height: 310px;
-      }
-
-      .quick-links {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-.highlight-list {
-  margin: 8px 0 0 18px;
-  padding: 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: #333333;
-}
-
-.highlight-list li {
-  margin-bottom: 4px;
-  padding-left: 3px;
-}
-
-.highlight-list li::marker {
-  color: #9E1B32;
-}
-    
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:wght@400;600;700&amp;display=swap" rel="stylesheet">
 </head>
 
 
-<body>
+<body><a class="skip-link" href="#main">Skip to content</a>
 
 
-<!-- =========================================================
-     NAVIGATION
-     ========================================================= -->
+
 
 <header>
 
@@ -544,27 +26,22 @@
 
     <a class="site-name" href="/">Shomi Aktar</a>
 
-    <nav>
-      <ul>
-        <li><a class="active" href="/">Home</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/publications/">Publications</a></li>
-        <li><a href="/teaching/">Teaching</a></li>
-        <li><a href="/talks/">Talks</a></li>
-        <li><a href="/awards/">Awards</a></li>
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/cv/">CV</a></li>
-      </ul>
-    </nav>
+    <nav aria-label="Main navigation"><ul><li><a href="/" class="active" aria-current="page">Home</a></li>
+<li><a href="/education/">Education</a></li>
+<li><a href="/research/">Research</a></li>
+<li><a href="/publications/">Publications</a></li>
+<li><a href="/teaching/">Teaching</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/awards/">Awards</a></li>
+<li><a href="/projects/">Projects</a></li>
+<li><a href="/service/">Service</a></li></ul></nav>
 
   </div>
 
-</header>
+</header><main id="main">
 
 
-<!-- =========================================================
-     HERO
-     ========================================================= -->
+
 
 <section class="hero">
 
@@ -584,7 +61,7 @@
   The University of Alabama
 </div>
 
-<div style="font-family: Arial, Helvetica, sans-serif;
+<div style="font-family: inherit;
             font-size: 17px;
             line-height: 1.7;
             color: #333333;
@@ -624,12 +101,7 @@
 
     <div class="photo-area">
 
-      <!--
-      Upload your professional photograph to the assets folder
-      and name it:
-
-      shomi-profile.jpg
-      -->
+      
 
       <img
         src="assets/shomi-profile.jpg"
@@ -643,9 +115,7 @@
 </section>
 
 
-<!-- =========================================================
-     ABOUT
-     ========================================================= -->
+
 
 <section>
 
@@ -658,87 +128,19 @@
         <h2 class="section-title">About Me</h2>
         <div class="title-line"></div>
 
-        <p>
-I am a Ph.D. Candidate in Mathematics at The University of Alabama,
-where I also earned an M.S. in Applied Mathematics. I received my B.S. and M.S.
-degrees in Mathematics from the University of Chittagong, Bangladesh,
-graduating with distinction and receiving the Gold Medal for Academic
-Excellence for my outstanding academic performance.
-</p>
-
-<p>
-As a Ph.D. candidate under the supervision of Dr. Mojdeh Rasoulzadeh,
-I study the transport and dynamics of thread-like deformable particles in
-complex and microstructured porous media. My research combines mathematical
-and numerical methods with stochastic modeling to understand particle transport
-across scales, with particular interest in anomalous transport, memory effects,
-and first-passage dynamics.
-</p>
-
-<p>
-My academic achievements have also been recognized through a
-Ministry of Science and Technology Fellowship from the Government
-of Bangladesh, along with academic scholarships and research support. At the
-University of Chittagong, I received research funding to conduct
-a project supported by the University's Research and Publication Cell.
-</p>
-
-<p>
-Before beginning my doctoral studies in the United States, I gained more than a
-decade of university-level teaching and academic experience in Bangladesh,
-progressing from Lecturer to Assistant Professor. Alongside teaching
-and research, I contributed to academic service and leadership, including organizing
-the National Undergraduate Mathematics Olympiad and serving in leadership roles
-for major departmental activities.
-</p>
-
-<p>
-At The University of Alabama, I continue to develop as both a researcher and
-educator, and I have received multiple competitive travel awards and funding to
-present my research at national and international professional meetings.
-</p>
+<p>Advised by <strong>Prof. Mojdeh Rasoulzadeh</strong>, I study <strong>anomalous transport of deformable particles in porous media</strong>, with applications to microplastic fibers.</p>
+<p>I study how <strong>geometric heterogeneity and temporal memory</strong> influence particle migration, retention, and arrival times. My work combines stochastic modeling with semi-analytical methods to connect local particle behavior with transport at larger scales.</p>
+<p>My academic experience spans <strong>university teaching and student research supervision</strong> in Bangladesh and the United States. I previously served as an Assistant Professor of Mathematics and now teach as an Instructor of Record.</p>
       </div>
 
 
-      <aside class="info-box" style="margin-top: 125px;">
-
-  <h3>Academic Highlights</h3>
-
-  <div class="info-item">
-    <span class="info-label">Academic Excellence</span>
-    <ul class="highlight-list">
-      <li>Gold Medal for Academic Excellence</li>
-      <li>Graduate Research Fellowship</li>
-      <li>A.F. Mujibar Rahman Scholarship</li>
-    </ul>
-  </div>
-
-  <div class="info-item">
-    <span class="info-label">Teaching &amp; Faculty Experience</span>
-    <ul class="highlight-list">
-      <li>More than a decade of university teaching</li>
-      <li>Former Assistant Professor of Mathematics</li>
-    </ul>
-  </div>
-
-  <div class="info-item">
-    <span class="info-label">Research &amp; Professional Recognition</span>
-    <ul class="highlight-list">
-      <li>Funded research experience</li>
-      <li>G-STAR award, The University of Alabama</li>
-      <li>Research Grant, University Grants Commission (UGC)</li>
-      <li>Multiple competitive conference travel awards</li>
-    </ul>
-  </div>
-
-  <div class="info-item">
-    <span class="info-label">Leadership &amp; Academic Service</span>
-    <ul class="highlight-list">
-      <li>Chair and member of multiple Examination Committees</li>
-      <li>National Undergraduate Mathematics Olympiad organizing committee</li>
-    </ul>
-  </div>
-
+      <aside class="info-box">
+<h3>Academic Profile</h3>
+<div class="info-item"><span class="info-label"><a href="/education/">Education &amp; Training</a></span><span class="info-value">Degrees, advisors, and advanced study</span></div>
+<div class="info-item"><span class="info-label"><a href="/publications/">Publications</a></span><span class="info-value">Published articles and submitted research</span></div>
+<div class="info-item"><span class="info-label"><a href="/awards/">Honors &amp; Awards</a></span><span class="info-value">Academic recognition and conference support</span></div>
+<div class="info-item"><span class="info-label"><a href="/projects/">Projects &amp; Skills</a></span><span class="info-value">Funded research and computational work</span></div>
+<div class="info-item"><span class="info-label"><a href="/service/">Professional Service</a></span><span class="info-value">Peer review, advising, and community involvement</span></div>
 </aside>
       
     </div>
@@ -748,9 +150,7 @@ present my research at national and international professional meetings.
 </section>
 
 
-<!-- =========================================================
-     RESEARCH AREAS
-     ========================================================= -->
+
 
 <section class="research-section">
 
@@ -762,82 +162,22 @@ present my research at national and international professional meetings.
     <div class="research-grid">
 
 
-      <div class="research-card">
-
-        <h3>Anomalous Transport</h3>
-
-        <p>
-          Mathematical modeling of non-Fickian transport,
-          breakthrough behavior, first-passage processes,
-          and memory-dependent dynamics.
-        </p>
-
-      </div>
+      <div class="research-card"><h3>Anomalous Transport</h3><p>Non-Fickian spreading and delayed arrival of particles in heterogeneous porous environments.</p></div>
 
 
-      <div class="research-card">
-
-        <h3>Microplastics in Porous Media</h3>
-
-        <p>
-          Transport of microfiber and thread-like particles
-          through geometrically complex porous environments
-          across pore and continuum scales.
-        </p>
-
-      </div>
+      <div class="research-card"><h3>Microplastic Fibers</h3><p>Migration and retention of elongated, deformable particles around circular obstacles.</p></div>
 
 
-      <div class="research-card">
-
-        <h3>Stochastic Modeling</h3>
-
-        <p>
-          Continuous-time random walks, memory kernels,
-          residence-time distributions, and stochastic
-          descriptions of heterogeneous transport.
-        </p>
-
-      </div>
+      <div class="research-card"><h3>Stochastic Modeling</h3><p>Continuous-time random walks and waiting-time distributions for heterogeneous particle motion.</p></div>
 
 
-      <div class="research-card">
-
-        <h3>First-Passage Problems</h3>
-
-        <p>
-          First-passage-time distributions and boundary-value
-          formulations for diffusion and transport in
-          geometrically heterogeneous domains.
-        </p>
-
-      </div>
+      <div class="research-card"><h3>First-Passage Analysis</h3><p>Time to reach a boundary or exit a region, and its relationship to breakthrough behavior.</p></div>
 
 
-      <div class="research-card">
-
-        <h3>Semi-Analytical Methods</h3>
-
-        <p>
-          Laplace-transform techniques, multipole expansions,
-          special-function representations, and analytical-numerical
-          approaches for transport problems.
-        </p>
-
-      </div>
+      <div class="research-card"><h3>Semi-Analytical Methods</h3><p>Laplace transforms, Fourier representations, Bessel functions, and multipole expansions.</p></div>
 
 
-      <div class="research-card">
-
-        <h3>Scientific Computing</h3>
-
-        <p>
-          Numerical computation and simulation for mathematical
-          models arising in transport phenomena, porous media,
-          and applied stochastic processes.
-        </p>
-
-      </div>
+      <div class="research-card"><h3>Scientific Computing</h3><p>Numerical analysis and simulation of diffusion and transport models.</p></div>
 
 
     </div>
@@ -847,9 +187,7 @@ present my research at national and international professional meetings.
 </section>
 
 
-<!-- =========================================================
-     EXPLORE
-     ========================================================= -->
+
 
 <section>
 
@@ -867,7 +205,7 @@ present my research at national and international professional meetings.
 
       <a href="/teaching/" class="quick-link">
         <strong>Teaching</strong>
-        <span>Courses, experience, and teaching philosophy</span>
+        <span>Courses, academic appointments, and mentoring</span>
       </a>
 
       <a href="/talks/" class="quick-link">
@@ -887,11 +225,9 @@ present my research at national and international professional meetings.
 </section>
 
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
 
-<footer>
+
+</main><footer>
 
   <div class="footer-container">
 
@@ -921,3 +257,4 @@ present my research at national and international professional meetings.
 
 </body>
 </html>
+
